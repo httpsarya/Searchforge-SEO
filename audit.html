@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Metadata -->
+  <title>Technical SEO Audit &amp; Rescue Dashboard | SearchForge SEO</title>
+  <meta name="description" content="Explore the comprehensive technical SEO audit report, issue logs (SEO-001 to SEO-015), before/after comparison metrics, and verified engineering fixes.">
+  <link rel="canonical" href="https://searchforge-seo.com/audit.html">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#FD6909">
+
+  <!-- Open Graph Protocol -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://searchforge-seo.com/audit.html">
+  <meta property="og:title" content="Technical SEO Audit &amp; Rescue Dashboard | SearchForge SEO">
+  <meta property="og:description" content="Full forensic audit report documenting 15 deliberate crawlability, canonical, metadata, and performance flaws with their exact code-level remedies.">
+  <meta property="og:image" content="https://searchforge-seo.com/assets/images/og-preview.png">
+
+  <!-- Tailwind CSS & Custom Design System -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FD6909',
+              orangeHover: '#E95700',
+              black: '#0D0D0D',
+              charcoal: '#181818',
+              surface: '#242424',
+              surfaceLight: '#3A3A3A',
+              offWhite: '#F5F5F5',
+              text: '#222222',
+              muted: '#999999',
+              border: '#EAEAEA'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- JSON-LD Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://searchforge-seo.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Audit Dashboard",
+        "item": "https://searchforge-seo.com/audit.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-brand-text flex flex-col min-h-screen">
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="site-container">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-10 h-10 rounded-md bg-[#181818] border border-brand-orange/40 flex items-center justify-center transition-all group-hover:border-brand-orange">
+            <svg class="w-5 h-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-white font-extrabold text-lg tracking-tight leading-none">SEARCH<span class="text-brand-orange">FORGE</span></span>
+            <span class="text-[10px] text-neutral-400 font-mono tracking-widest uppercase">AUDIT CONSOLE</span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8" aria-label="Primary Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services/index.html" class="nav-link">Services</a>
+          <a href="case-studies/index.html" class="nav-link">Case Studies</a>
+          <a href="blog/index.html" class="nav-link">Blog &amp; Guides</a>
+          <a href="faq.html" class="nav-link">FAQ</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="SearchForge_Technical_SEO_Rescue_Dossier.pdf" download class="btn-secondary text-xs uppercase tracking-wider py-3 px-4 flex items-center gap-1.5" title="Download Full Technical Architecture PDF Dossier">
+            <svg class="w-3.5 h-3.5 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            <span>PDF Dossier</span>
+          </a>
+          <span class="badge badge-fixed">Audit Mode: Active</span>
+        </div>
+
+        <button id="mobile-menu-toggle" class="lg:hidden text-neutral-300 hover:text-white p-2" aria-expanded="false" aria-controls="mobile-nav-menu" aria-label="Toggle navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobile-nav-menu" class="hidden lg:hidden border-t border-neutral-800 py-4 space-y-3 bg-[#0D0D0D]">
+        <a href="index.html" class="block text-neutral-300 hover:text-white py-1.5">Home</a>
+        <a href="about.html" class="block text-neutral-300 hover:text-white py-1.5">About</a>
+        <a href="services/index.html" class="block text-neutral-300 hover:text-white py-1.5">Services</a>
+        <a href="case-studies/index.html" class="block text-neutral-300 hover:text-white py-1.5">Case Studies</a>
+        <a href="blog/index.html" class="block text-neutral-300 hover:text-white py-1.5">Blog &amp; Guides</a>
+        <a href="faq.html" class="block text-neutral-300 hover:text-white py-1.5">FAQ</a>
+        <a href="contact.html" class="block text-neutral-300 hover:text-white py-1.5">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1">
+
+    <!-- Hero / Title Header -->
+    <section class="hero-pattern py-16 text-white border-b border-brand-surfaceLight">
+      <div class="site-container">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-6" aria-label="Breadcrumbs">
+          <a href="index.html" class="hover:text-brand-orange">Home</a>
+          <span>/</span>
+          <span class="text-white">Audit Hub</span>
+        </nav>
+
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+          <div>
+            <span class="badge badge-orange mb-3">SYSTEMATIC RESCUE VERIFICATION</span>
+            <h1 class="hero-heading text-white">Technical SEO Audit Dashboard</h1>
+            <p class="text-neutral-300 text-base max-w-2xl mt-4 leading-relaxed">
+              Complete diagnostic overview of all 15 intentionally engineered SEO vulnerabilities, their affected URLs, symptoms, root causes, technical fixes, and post-remediation validation proofs.
+            </p>
+          </div>
+
+          <!-- Dynamic Mode Card -->
+          <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-6 min-w-[280px]">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs uppercase font-mono text-neutral-400">STATE CONTROL</span>
+              <span id="audit-health-badge" class="badge badge-fixed">98 / 100 PTS</span>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="flex justify-between text-neutral-300">
+                <span>Active Mode:</span>
+                <span id="audit-mode-text" class="font-bold text-emerald-400">Rescued (Post-Fix)</span>
+              </div>
+              <div class="flex justify-between text-neutral-300">
+                <span>Critical Vulnerabilities:</span>
+                <span id="audit-critical-count" class="font-mono font-bold text-emerald-400">0</span>
+              </div>
+              <div class="flex justify-between text-neutral-300">
+                <span>Remediated Issues:</span>
+                <span id="audit-resolved-count" class="font-mono font-bold text-white">15 / 15</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-4 border-t border-neutral-800 flex gap-2">
+              <button id="btn-toggle-flawed" type="button" class="text-xs font-semibold py-2 px-3 rounded bg-red-950/40 text-red-400 hover:bg-red-900/60 border border-red-800/50 flex-1 text-center transition">
+                Simulate Flawed
+              </button>
+              <button id="btn-toggle-rescued" type="button" class="text-xs font-semibold py-2 px-3 rounded bg-emerald-950/40 text-emerald-400 hover:bg-emerald-900/60 border border-emerald-800/50 flex-1 text-center transition">
+                Simulate Rescued
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- F21. SEO AUDIT CHECKLIST SECTION -->
+    <section class="py-16 bg-brand-offWhite border-b border-neutral-200">
+      <div class="site-container">
+        <div class="max-w-2xl mb-10">
+          <span class="badge badge-orange mb-2">PRD SPECIFICATION F21</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-brand-black">Core Area Remediation Checklist</h2>
+          <p class="text-neutral-600 text-sm mt-2">
+            Every core technical area required by the project specification has been audited and remediated.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <div class="bg-white p-5 rounded-lg border border-neutral-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">&check;</div>
+              <span class="font-semibold text-sm text-brand-black">Crawlability</span>
+            </div>
+            <span class="badge badge-fixed">Fixed</span>
+          </div>
+
+          <div class="bg-white p-5 rounded-lg border border-neutral-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">&check;</div>
+              <span class="font-semibold text-sm text-brand-black">Indexability</span>
+            </div>
+            <span class="badge badge-fixed">Fixed</span>
+          </div>
+
+          <div class="bg-white p-5 rounded-lg border border-neutral-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">&check;</div>
+              <span class="font-semibold text-sm text-brand-black">Metadata</span>
+            </div>
+            <span class="badge badge-fixed">Fixed</span>
+          </div>
+
+          <div class="bg-white p-5 rounded-lg border border-neutral-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">&check;</div>
+              <span class="font-semibold text-sm text-brand-black">Canonicals</span>
+            </div>
+            <span class="badge badge-fixed">Fixed</span>
+          </div>
+
+          <div class="bg-white p-5 rounded-lg border border-neutral-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">&check;</div>
+              <span class="font-semibold text-sm text-brand-black">XML Sitemap</span>
+            </div>
+            <span class="badge badge-fixed">Fixed</span>
+          </div>
+
+          <div class="bg-white p-5 rounded-lg border border-neutral-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">&check;</div>
+              <span class="font-semibold text-sm text-brand-black">Robots.txt</span>
+            </div>
+            <span class="badge badge-fixed">Fixed</span>
+          </div>
+
+          <div class="bg-white p-5 rounded-lg border border-neutral-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">&check;</div>
+              <span class="font-semibold text-sm text-brand-black">Internal Links</span>
+            </div>
+            <span class="badge badge-fixed">Fixed</span>
+          </div>
+
+          <div class="bg-white p-5 rounded-lg border border-neutral-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">&check;</div>
+              <span class="font-semibold text-sm text-brand-black">Performance</span>
+            </div>
+            <span class="badge badge-fixed">Fixed</span>
+          </div>
+
+          <div class="bg-white p-5 rounded-lg border border-neutral-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">&check;</div>
+              <span class="font-semibold text-sm text-brand-black">Structured Data</span>
+            </div>
+            <span class="badge badge-fixed">Fixed</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- F22 & F23. SEO HEALTH DASHBOARD & BEFORE/AFTER METRICS -->
+    <section class="py-20 bg-white">
+      <div class="site-container">
+        <div class="max-w-2xl mb-12">
+          <span class="badge badge-orange mb-2">PRD SPECIFICATION F22 &amp; F23</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-brand-black">Comparative Metrics Matrix</h2>
+          <p class="text-neutral-600 text-sm mt-2">
+            Transparent scoring criteria evaluating the quantitative difference between the flawed and rescued codebase.
+          </p>
+        </div>
+
+        <div class="border border-neutral-200 rounded-xl overflow-hidden shadow-sm overflow-x-auto">
+          <table class="w-full text-left text-sm min-w-[640px]">
+            <thead class="bg-neutral-900 text-white font-mono text-xs uppercase tracking-wider">
+              <tr>
+                <th class="p-4 sm:p-5">Audit Metric</th>
+                <th class="p-4 sm:p-5">Pre-Rescue (Flawed)</th>
+                <th class="p-4 sm:p-5">Post-Rescue (Fixed)</th>
+                <th class="p-4 sm:p-5">Delta / Improvement</th>
+                <th class="p-4 sm:p-5">Target Criteria</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-neutral-200 text-neutral-700">
+              <tr class="hover:bg-neutral-50 transition">
+                <td class="p-4 sm:p-5 font-semibold text-brand-black">Lighthouse SEO Health Score</td>
+                <td class="p-4 sm:p-5 font-mono text-red-600 font-bold">42 / 100</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-600 font-bold">98 / 100</td>
+                <td class="p-4 sm:p-5 text-emerald-600 font-bold">+56 Points</td>
+                <td class="p-4 sm:p-5 text-xs text-neutral-500">&ge; 90 Points</td>
+              </tr>
+              <tr class="hover:bg-neutral-50 transition">
+                <td class="p-4 sm:p-5 font-semibold text-brand-black">Critical Severity Issues</td>
+                <td class="p-4 sm:p-5 font-mono text-red-600 font-bold">8 Active</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-600 font-bold">0 Active</td>
+                <td class="p-4 sm:p-5 text-emerald-600 font-bold">-100% Eliminated</td>
+                <td class="p-4 sm:p-5 text-xs text-neutral-500">0 Critical Errors</td>
+              </tr>
+              <tr class="hover:bg-neutral-50 transition">
+                <td class="p-4 sm:p-5 font-semibold text-brand-black">Broken Internal Links (404s)</td>
+                <td class="p-4 sm:p-5 font-mono text-red-600 font-bold">12 Dead Targets</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-600 font-bold">0 Dead Targets</td>
+                <td class="p-4 sm:p-5 text-emerald-600 font-bold">-12 Links</td>
+                <td class="p-4 sm:p-5 text-xs text-neutral-500">0 Broken Links</td>
+              </tr>
+              <tr class="hover:bg-neutral-50 transition">
+                <td class="p-4 sm:p-5 font-semibold text-brand-black">Missing or Duplicate Titles</td>
+                <td class="p-4 sm:p-5 font-mono text-red-600 font-bold">11 Total Violations</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-600 font-bold">0 Violations</td>
+                <td class="p-4 sm:p-5 text-emerald-600 font-bold">100% Unique</td>
+                <td class="p-4 sm:p-5 text-xs text-neutral-500">0 Duplicate Titles</td>
+              </tr>
+              <tr class="hover:bg-neutral-50 transition">
+                <td class="p-4 sm:p-5 font-semibold text-brand-black">Missing Image Alt Attributes</td>
+                <td class="p-4 sm:p-5 font-mono text-red-600 font-bold">18 Assets</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-600 font-bold">0 Assets</td>
+                <td class="p-4 sm:p-5 text-emerald-600 font-bold">All Tagged</td>
+                <td class="p-4 sm:p-5 text-xs text-neutral-500">100% Coverage</td>
+              </tr>
+              <tr class="hover:bg-neutral-50 transition">
+                <td class="p-4 sm:p-5 font-semibold text-brand-black">Canonical Configuration Errors</td>
+                <td class="p-4 sm:p-5 font-mono text-red-600 font-bold">5 URLs Mismatched</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-600 font-bold">0 Errors</td>
+                <td class="p-4 sm:p-5 text-emerald-600 font-bold">Strict Self-Ref</td>
+                <td class="p-4 sm:p-5 text-xs text-neutral-500">0 Canonical Conflicts</td>
+              </tr>
+              <tr class="hover:bg-neutral-50 transition">
+                <td class="p-4 sm:p-5 font-semibold text-brand-black">XML Sitemap Inconsistencies</td>
+                <td class="p-4 sm:p-5 font-mono text-red-600 font-bold">3 Faults</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-600 font-bold">0 Faults</td>
+                <td class="p-4 sm:p-5 text-emerald-600 font-bold">Synchronized</td>
+                <td class="p-4 sm:p-5 text-xs text-neutral-500">100% Canonical URLs</td>
+              </tr>
+              <tr class="hover:bg-neutral-50 transition">
+                <td class="p-4 sm:p-5 font-semibold text-brand-black">Largest Contentful Paint (LCP)</td>
+                <td class="p-4 sm:p-5 font-mono text-red-600 font-bold">4.8s (Poor)</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-600 font-bold">1.4s (Good)</td>
+                <td class="p-4 sm:p-5 text-emerald-600 font-bold">-3.4s Speedup</td>
+                <td class="p-4 sm:p-5 text-xs text-neutral-500">&le; 2.5s</td>
+              </tr>
+              <tr class="hover:bg-neutral-50 transition">
+                <td class="p-4 sm:p-5 font-semibold text-brand-black">Cumulative Layout Shift (CLS)</td>
+                <td class="p-4 sm:p-5 font-mono text-red-600 font-bold">0.24 (High)</td>
+                <td class="p-4 sm:p-5 font-mono text-emerald-600 font-bold">0.01 (Stable)</td>
+                <td class="p-4 sm:p-5 text-emerald-600 font-bold">-0.23 Delta</td>
+                <td class="p-4 sm:p-5 text-xs text-neutral-500">&le; 0.1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- F24 & ISSUE LOG TABLE: 15 INTENTIONAL SEO FLAWS -->
+    <section class="py-20 bg-brand-offWhite border-t border-neutral-200">
+      <div class="site-container">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div>
+            <span class="badge badge-orange mb-2">COMPLETE ISSUE REPOSITORY (SEO-001 TO SEO-015)</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-brand-black">Deliberate Flaws &amp; Technical Fixes</h2>
+            <p class="text-neutral-600 text-sm mt-1">
+              Filter by category or severity to examine root cause analysis and validation procedures.
+            </p>
+          </div>
+
+          <!-- Category Filter Bar -->
+          <div class="flex flex-wrap items-center gap-2">
+            <button class="issue-filter-btn active text-xs font-semibold px-3 py-1.5 rounded bg-brand-orange text-white" data-cat="all">All (15)</button>
+            <button class="issue-filter-btn text-xs font-semibold px-3 py-1.5 rounded bg-white text-neutral-700 border border-neutral-300 hover:border-brand-orange" data-cat="Metadata">Metadata</button>
+            <button class="issue-filter-btn text-xs font-semibold px-3 py-1.5 rounded bg-white text-neutral-700 border border-neutral-300 hover:border-brand-orange" data-cat="Crawlability">Crawl</button>
+            <button class="issue-filter-btn text-xs font-semibold px-3 py-1.5 rounded bg-white text-neutral-700 border border-neutral-300 hover:border-brand-orange" data-cat="Indexability">Indexing</button>
+            <button class="issue-filter-btn text-xs font-semibold px-3 py-1.5 rounded bg-white text-neutral-700 border border-neutral-300 hover:border-brand-orange" data-cat="Canonicals">Canonicals</button>
+            <button class="issue-filter-btn text-xs font-semibold px-3 py-1.5 rounded bg-white text-neutral-700 border border-neutral-300 hover:border-brand-orange" data-cat="Performance & Image SEO">Performance</button>
+          </div>
+        </div>
+
+        <!-- Issue Cards / List -->
+        <div id="issue-logs-container" class="space-y-6">
+          <!-- Populated by JavaScript from SEO_AUDIT_DATA -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Multi-Column Dark Agency Footer -->
+  <footer class="bg-brand-black text-white border-t border-neutral-800 py-16">
+    <div class="site-container">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-neutral-800/80">
+        <div class="lg:col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-[#181818] border border-brand-orange/40 flex items-center justify-center">
+              <svg class="w-4 h-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <span class="text-white font-extrabold text-base tracking-tight">SEARCH<span class="text-brand-orange">FORGE</span></span>
+          </a>
+          <p class="text-neutral-400 text-xs leading-relaxed max-w-sm">
+            SearchForge SEO is an elite technical SEO agency and learning laboratory. We build, break, diagnose, and remediate complex search architecture.
+          </p>
+          <div class="pt-2 text-xs text-neutral-400 space-y-1">
+            <div class="text-white font-medium">Project Owner: Arya Tiwari <span class="text-brand-orange font-mono text-[11px]">(CSE Student)</span></div>
+            <div>Bennett University &middot; Greater Noida, India</div>
+            <div class="font-mono text-[11px] text-neutral-400">
+              <a href="tel:+919999606103" class="hover:text-brand-orange">+91 9999606103</a> &middot; <a href="mailto:arya2tiwari@gmail.com" class="hover:text-brand-orange">arya2tiwari@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Core Practices</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="services/technical-seo.html" class="hover:text-brand-orange">Technical SEO</a></li>
+            <li><a href="services/on-page-seo.html" class="hover:text-brand-orange">On-Page Architecture</a></li>
+            <li><a href="services/local-seo.html" class="hover:text-brand-orange">Local SEO &amp; Entities</a></li>
+            <li><a href="services/seo-audits.html" class="hover:text-brand-orange">Forensic Audits</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Documentation</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="audit.html" class="hover:text-brand-orange font-semibold text-brand-orange">SEO Audit Hub</a></li>
+            <li><a href="blog/technical-seo-checklist.html" class="hover:text-brand-orange">45-Point Audit Checklist</a></li>
+            <li><a href="blog/crawlability-guide.html" class="hover:text-brand-orange">Crawlability Deep Dive</a></li>
+            <li><a href="blog/core-web-vitals-guide.html" class="hover:text-brand-orange">Core Web Vitals Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Company</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="about.html" class="hover:text-brand-orange">About Us</a></li>
+            <li><a href="case-studies/retail-growth.html" class="hover:text-brand-orange">Retail Case Study</a></li>
+            <li><a href="faq.html" class="hover:text-brand-orange">Frequently Asked Questions</a></li>
+            <li><a href="contact.html" class="hover:text-brand-orange">Contact Team</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-neutral-400 gap-4">
+        <div>
+          &copy; 2026 SearchForge SEO &middot; Designed &amp; Developed by <span class="text-white font-semibold">Arya Tiwari</span> (CSE Student, Bennett University, Greater Noida)
+        </div>
+        <div class="flex items-center gap-3 font-mono text-xs">
+          <a href="https://httpsarya.github.io/Arya_Tiwari_portfolio_12/" target="_blank" rel="noopener" class="text-brand-orange hover:underline">Portfolio</a>
+          <span class="text-neutral-600">&middot;</span>
+          <a href="https://github.com/httpsarya" target="_blank" rel="noopener" class="text-brand-orange hover:underline">GitHub</a>
+          <span class="text-neutral-600">&middot;</span>
+          <a href="https://linkedin.com/in/arya-tiwari-01ba84292/" target="_blank" rel="noopener" class="text-brand-orange hover:underline">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/audit-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Audit Hub specific rendering logic
+    document.addEventListener('DOMContentLoaded', () => {
+      renderIssueCards('all');
+      setupCategoryFilter();
+      bindStateButtons();
+
+      window.addEventListener('seoModeChanged', (e) => {
+        updateAuditHeaderState(e.detail.mode);
+      });
+
+      updateAuditHeaderState(window.SearchForge ? window.SearchForge.getRescueMode() : 'rescued');
+    });
+
+    function updateAuditHeaderState(mode) {
+      const modeText = document.getElementById('audit-mode-text');
+      const badge = document.getElementById('audit-health-badge');
+      const critCount = document.getElementById('audit-critical-count');
+      const resCount = document.getElementById('audit-resolved-count');
+
+      if (mode === 'flawed') {
+        if (modeText) {
+          modeText.textContent = 'Flawed (Pre-Rescue)';
+          modeText.className = 'font-bold text-red-500';
+        }
+        if (badge) {
+          badge.textContent = '42 / 100 PTS';
+          badge.className = 'badge badge-broken';
+        }
+        if (critCount) {
+          critCount.textContent = '8 Active';
+          critCount.className = 'font-mono font-bold text-red-500';
+        }
+        if (resCount) {
+          resCount.textContent = '0 / 15 Remediated';
+        }
+      } else {
+        if (modeText) {
+          modeText.textContent = 'Rescued (Post-Fix)';
+          modeText.className = 'font-bold text-emerald-400';
+        }
+        if (badge) {
+          badge.textContent = '98 / 100 PTS';
+          badge.className = 'badge badge-fixed';
+        }
+        if (critCount) {
+          critCount.textContent = '0 Active';
+          critCount.className = 'font-mono font-bold text-emerald-400';
+        }
+        if (resCount) {
+          resCount.textContent = '15 / 15 Remediated';
+        }
+      }
+    }
+
+    function bindStateButtons() {
+      const btnFlawed = document.getElementById('btn-toggle-flawed');
+      const btnRescued = document.getElementById('btn-toggle-rescued');
+
+      if (btnFlawed && window.SearchForge) {
+        btnFlawed.addEventListener('click', () => window.SearchForge.setRescueMode('flawed'));
+      }
+      if (btnRescued && window.SearchForge) {
+        btnRescued.addEventListener('click', () => window.SearchForge.setRescueMode('rescued'));
+      }
+    }
+
+    function renderIssueCards(filterCategory) {
+      const container = document.getElementById('issue-logs-container');
+      if (!container || !window.SEO_AUDIT_DATA) return;
+
+      const issues = window.SEO_AUDIT_DATA.issues;
+      const filtered = filterCategory === 'all' 
+        ? issues 
+        : issues.filter(i => i.category === filterCategory);
+
+      container.innerHTML = filtered.map(issue => {
+        const severityClass = issue.severity === 'Critical' 
+          ? 'badge-broken' 
+          : (issue.severity === 'High' ? 'badge-warning' : 'badge-orange');
+
+        return `
+          <div class="bg-white rounded-xl border border-neutral-200 overflow-hidden shadow-sm p-6 sm:p-8 hover:border-brand-orange transition">
+            <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-neutral-100">
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-sm font-bold text-white bg-neutral-900 px-2.5 py-1 rounded">${issue.id}</span>
+                <h3 class="text-lg font-bold text-brand-black">${issue.title}</h3>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="badge ${severityClass}">${issue.severity} Severity</span>
+                <span class="badge badge-fixed">&check; Fixed</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 text-sm">
+              <div class="space-y-4">
+                <div>
+                  <span class="text-xs uppercase font-mono text-neutral-400 font-bold block mb-1">Affected Location:</span>
+                  <code class="text-xs font-mono text-brand-orange bg-neutral-100 px-2 py-1 rounded block w-fit">${issue.location}</code>
+                </div>
+                <div>
+                  <span class="text-xs uppercase font-mono text-neutral-400 font-bold block mb-1">Problem &amp; Symptom:</span>
+                  <p class="text-neutral-700">${issue.symptom}</p>
+                </div>
+                <div>
+                  <span class="text-xs uppercase font-mono text-neutral-400 font-bold block mb-1">Root Cause:</span>
+                  <p class="text-neutral-600 text-xs">${issue.rootCause}</p>
+                </div>
+              </div>
+
+              <div class="space-y-4 bg-neutral-50 p-5 rounded-lg border border-neutral-100">
+                <div>
+                  <span class="text-xs uppercase font-mono text-emerald-700 font-bold block mb-1">&check; Implemented Rescue Fix:</span>
+                  <p class="text-neutral-800 font-medium">${issue.rescueFix}</p>
+                </div>
+                <div>
+                  <span class="text-xs uppercase font-mono text-neutral-500 font-bold block mb-1">Validation &amp; Verification Method:</span>
+                  <p class="text-neutral-600 text-xs">${issue.validationMethod}</p>
+                </div>
+                <div>
+                  <span class="text-xs uppercase font-mono text-neutral-500 font-bold block mb-1">Organic Search Impact:</span>
+                  <p class="text-emerald-800 text-xs font-semibold">${issue.impact}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function setupCategoryFilter() {
+      const buttons = document.querySelectorAll('.issue-filter-btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => {
+            b.classList.remove('active', 'bg-brand-orange', 'text-white');
+            b.classList.add('bg-white', 'text-neutral-700');
+          });
+          btn.classList.add('active', 'bg-brand-orange', 'text-white');
+          btn.classList.remove('bg-white', 'text-neutral-700');
+          renderIssueCards(btn.getAttribute('data-cat'));
+        });
+      });
+    }
+  </script>
+</body>
+</html>

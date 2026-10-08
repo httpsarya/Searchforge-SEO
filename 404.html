@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>404 - Endpoint Not Found | SearchForge Technical SEO</title>
+  <meta name="description" content="The requested URL was not found on this server. Explore SearchForge SEO's technical practices, case studies, or diagnostic audit hub.">
+  <link rel="canonical" href="https://searchforge-seo.com/404.html">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#FD6909">
+
+  <!-- Tailwind CSS & Custom Design System -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FD6909',
+              orangeHover: '#E95700',
+              black: '#0D0D0D',
+              charcoal: '#181818',
+              surface: '#242424',
+              surfaceLight: '#3A3A3A',
+              offWhite: '#F5F5F5',
+              text: '#222222',
+              muted: '#999999',
+              border: '#EAEAEA'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white text-brand-text flex flex-col min-h-screen">
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="site-container">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-10 h-10 rounded-md bg-[#181818] border border-brand-orange/40 flex items-center justify-center transition-all group-hover:border-brand-orange">
+            <svg class="w-5 h-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-white font-extrabold text-lg tracking-tight leading-none">SEARCH<span class="text-brand-orange">FORGE</span></span>
+            <span class="text-[10px] text-neutral-400 font-mono tracking-widest uppercase">ERROR 404</span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8" aria-label="Primary Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services/index.html" class="nav-link">Services</a>
+          <a href="case-studies/index.html" class="nav-link">Case Studies</a>
+          <a href="blog/index.html" class="nav-link">Blog &amp; Guides</a>
+          <a href="faq.html" class="nav-link">FAQ</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="audit.html" class="btn-primary text-xs uppercase tracking-wider py-3 px-5">Audit Hub</a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="lg:hidden text-neutral-300 hover:text-white p-2" aria-expanded="false" aria-controls="mobile-nav-menu" aria-label="Toggle navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Navigation -->
+      <div id="mobile-nav-menu" class="hidden lg:hidden border-t border-neutral-800 py-4 space-y-3 bg-[#0D0D0D]">
+        <a href="index.html" class="block text-neutral-300 hover:text-white py-1.5">Home</a>
+        <a href="about.html" class="block text-neutral-300 hover:text-white py-1.5">About</a>
+        <a href="services/index.html" class="block text-neutral-300 hover:text-white py-1.5">Services</a>
+        <a href="case-studies/index.html" class="block text-neutral-300 hover:text-white py-1.5">Case Studies</a>
+        <a href="blog/index.html" class="block text-neutral-300 hover:text-white py-1.5">Blog &amp; Guides</a>
+        <a href="faq.html" class="block text-neutral-300 hover:text-white py-1.5">FAQ</a>
+        <a href="contact.html" class="block text-neutral-300 hover:text-white py-1.5">Contact</a>
+        <div class="pt-2">
+          <a href="audit.html" class="btn-primary w-full text-center">Launch Audit Hub</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1 flex items-center justify-center py-20 bg-brand-charcoal text-white">
+    <div class="site-container max-w-2xl text-center space-y-6">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-950/60 border border-red-800 text-red-400 text-xs font-mono font-bold">
+        <span>HTTP STATUS: 404 NOT FOUND</span>
+      </div>
+
+      <h1 class="text-6xl sm:text-8xl font-black text-brand-orange tracking-tight font-mono">
+        404
+      </h1>
+
+      <h2 class="text-2xl sm:text-3xl font-bold text-white">
+        Endpoint Does Not Exist
+      </h2>
+
+      <p class="text-neutral-300 text-sm max-w-md mx-auto leading-relaxed">
+        The requested URI cannot be located on the SearchForge server. This response sends an explicit 404 status header to prevent search bots from indexing non-existent soft-404 targets.
+      </p>
+
+      <div class="p-6 bg-neutral-900 border border-neutral-800 rounded-xl text-left text-xs max-w-md mx-auto space-y-3 font-mono">
+        <div class="text-neutral-400 font-bold uppercase pb-1 border-b border-neutral-800">Recommended Navigation:</div>
+        <div class="flex items-center justify-between">
+          <a href="index.html" class="text-brand-orange hover:underline">&rarr; Return to Homepage</a>
+          <span class="text-neutral-500">200 OK</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <a href="services/index.html" class="text-brand-orange hover:underline">&rarr; Technical Services</a>
+          <span class="text-neutral-500">200 OK</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <a href="audit.html" class="text-brand-orange hover:underline">&rarr; SEO Audit &amp; Rescue Hub</a>
+          <span class="text-neutral-500">200 OK</span>
+        </div>
+      </div>
+
+      <div class="pt-4">
+        <a href="index.html" class="btn-primary text-xs py-3 px-6">
+          <span>Safe Return to Homepage</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Multi-Column Dark Agency Footer -->
+  <footer class="bg-brand-black text-white border-t border-neutral-800 py-12">
+    <div class="site-container flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+      <div>
+        &copy; 2026 SearchForge SEO &middot; Project Architect: <span class="text-white font-semibold">Arya Tiwari</span> (CSE Student, Bennett University, Greater Noida)
+      </div>
+      <div class="flex items-center gap-3 font-mono text-xs">
+        <a href="https://httpsarya.github.io/Arya_Tiwari_portfolio_12/" target="_blank" rel="noopener" class="text-brand-orange hover:underline">Portfolio</a>
+        <span class="text-neutral-600">&middot;</span>
+        <a href="https://github.com/httpsarya" target="_blank" rel="noopener" class="text-brand-orange hover:underline">GitHub</a>
+        <span class="text-neutral-600">&middot;</span>
+        <a href="https://linkedin.com/in/arya-tiwari-01ba84292/" target="_blank" rel="noopener" class="text-brand-orange hover:underline">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/audit-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

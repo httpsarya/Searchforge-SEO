@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & temp files
+*.log
+*.tmp
+*.bak
+
+# Antigravity system generated
+.system_generated/
+scratch/
+tools/
+
+# Editor files
+.vscode/
+.idea/

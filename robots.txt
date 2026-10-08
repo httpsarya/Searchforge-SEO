@@ -1,0 +1,20 @@
+# Technical SEO Rescue - robots.txt
+# SearchForge SEO (https://searchforge-seo.com)
+#
+# SCENARIO COMPARISON (Deliberate Flaw vs Rescued State):
+# ----------------------------------------------------
+# [FLAWED PRE-RESCUE DIRECTIVE]:
+# User-agent: *
+# Disallow: /services/               <-- Accidental Disallow blocked 4 core commercial conversion pages!
+# Disallow: /case-studies/
+# Sitemap: https://searchforge-seo.com/wrong-sitemap-path.xml  <-- 404 dead sitemap URL
+#
+# [RESCUED POST-RESCUE DIRECTIVE - CURRENT ACTIVE]:
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /scratch/
+Disallow: /private/
+
+# Canonical Sitemaps
+Sitemap: https://searchforge-seo.com/sitemap.xml

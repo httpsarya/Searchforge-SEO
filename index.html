@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Metadata -->
+  <title>SearchForge SEO | Technical SEO Agency &amp; Audit Rescue</title>
+  <meta name="description" content="SearchForge SEO is a premier technical SEO consultancy engineered to resolve crawlability bottlenecks, indexing failures, schema markup errors, and Core Web Vitals deficits.">
+  <link rel="canonical" href="https://searchforge-seo.com/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#FD6909">
+
+  <!-- Open Graph Protocol -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://searchforge-seo.com/">
+  <meta property="og:title" content="SearchForge SEO | Technical SEO Agency &amp; Audit Rescue">
+  <meta property="og:description" content="Technical SEO. Rebuilt from the foundation up. Audit, diagnose, and rescue your search engine visibility.">
+  <meta property="og:image" content="https://searchforge-seo.com/assets/images/og-preview.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SearchForge SEO | Technical SEO Agency &amp; Audit Rescue">
+  <meta name="twitter:description" content="Technical SEO rebuilt from the foundation up. Eliminate crawl traps, status code errors, and canonical conflicts.">
+
+  <!-- Tailwind CSS & Custom Design System -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FD6909',
+              orangeHover: '#E95700',
+              black: '#0D0D0D',
+              charcoal: '#181818',
+              surface: '#242424',
+              surfaceLight: '#3A3A3A',
+              offWhite: '#F5F5F5',
+              text: '#222222',
+              muted: '#999999',
+              border: '#EAEAEA'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- JSON-LD Structured Data: Organization & WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://searchforge-seo.com/#organization",
+        "name": "SearchForge SEO",
+        "url": "https://searchforge-seo.com",
+        "logo": "https://searchforge-seo.com/assets/images/favicon.svg",
+        "description": "Technical SEO consultancy engineering high-performance crawlability, indexability, and revenue growth. Conceived and engineered by Arya Tiwari.",
+        "foundingDate": "2026",
+        "founder": {
+          "@type": "Person",
+          "name": "Arya Tiwari",
+          "jobTitle": "CSE Student",
+          "affiliation": {
+            "@type": "EducationalOrganization",
+            "name": "Bennett University",
+            "address": "Greater Noida, India"
+          },
+          "sameAs": [
+            "https://httpsarya.github.io/Arya_Tiwari_portfolio_12/",
+            "https://github.com/httpsarya",
+            "https://linkedin.com/in/arya-tiwari-01ba84292/"
+          ]
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bennett University",
+          "addressLocality": "Greater Noida",
+          "addressRegion": "Uttar Pradesh",
+          "postalCode": "201310",
+          "addressCountry": "IN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-9999606103",
+          "email": "arya2tiwari@gmail.com",
+          "contactType": "Technical Architect",
+          "areaServed": "Worldwide"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://searchforge-seo.com/#website",
+        "url": "https://searchforge-seo.com",
+        "name": "SearchForge Technical SEO",
+        "publisher": {
+          "@id": "https://searchforge-seo.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://searchforge-seo.com/blog/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-brand-text flex flex-col min-h-screen">
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- 1. Header / Navbar -->
+  <header class="site-header">
+    <div class="site-container">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-10 h-10 rounded-md bg-[#181818] border border-brand-orange/40 flex items-center justify-center transition-all group-hover:border-brand-orange">
+            <svg class="w-5 h-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-white font-extrabold text-lg tracking-tight leading-none">SEARCH<span class="text-brand-orange">FORGE</span></span>
+            <span class="text-[10px] text-neutral-400 font-mono tracking-widest uppercase">TECHNICAL SEO</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-8" aria-label="Primary Navigation">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="services/index.html" class="nav-link">Services</a>
+          <a href="case-studies/index.html" class="nav-link">Case Studies</a>
+          <a href="blog/index.html" class="nav-link">Blog &amp; Guides</a>
+          <a href="faq.html" class="nav-link">FAQ</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Right Header Actions -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="SearchForge_Technical_SEO_Rescue_Dossier.pdf" download class="btn-secondary text-xs uppercase tracking-wider py-3 px-4 flex items-center gap-1.5" title="Download Full Technical Architecture PDF Dossier">
+            <svg class="w-3.5 h-3.5 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            <span>PDF Dossier</span>
+          </a>
+          <a href="audit.html" class="btn-primary text-xs uppercase tracking-wider py-3 px-5">
+            <span>Audit Hub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="lg:hidden text-neutral-300 hover:text-white p-2" aria-expanded="false" aria-controls="mobile-nav-menu" aria-label="Toggle navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Navigation -->
+      <div id="mobile-nav-menu" class="hidden lg:hidden border-t border-neutral-800 py-4 space-y-3 bg-[#0D0D0D]">
+        <a href="index.html" class="block text-brand-orange font-semibold py-1.5">Home</a>
+        <a href="about.html" class="block text-neutral-300 hover:text-white py-1.5">About</a>
+        <a href="services/index.html" class="block text-neutral-300 hover:text-white py-1.5">Services</a>
+        <a href="case-studies/index.html" class="block text-neutral-300 hover:text-white py-1.5">Case Studies</a>
+        <a href="blog/index.html" class="block text-neutral-300 hover:text-white py-1.5">Blog &amp; Guides</a>
+        <a href="faq.html" class="block text-neutral-300 hover:text-white py-1.5">FAQ</a>
+        <a href="contact.html" class="block text-neutral-300 hover:text-white py-1.5">Contact</a>
+        <div class="pt-2">
+          <a href="audit.html" class="btn-primary w-full text-center">Launch Audit Hub</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content" class="flex-1">
+
+    <!-- 2. DARK HERO SECTION -->
+    <section class="hero-pattern py-20 lg:py-28 border-b border-brand-surfaceLight text-white relative overflow-hidden">
+      <div class="site-container relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Hero Left Column -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="flex flex-wrap items-center gap-2">
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-orange/10 border border-brand-orange/30">
+                <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+                <span class="text-xs font-semibold uppercase tracking-wider text-brand-orange">TECHNICAL SEO RESCUE PROJECT</span>
+              </div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-300 text-xs font-mono">
+                <span class="text-brand-orange font-semibold">Project Lead:</span> Arya Tiwari (CSE Student &middot; Bennett University)
+              </div>
+            </div>
+            
+            <h1 class="hero-heading text-white">
+              Your Website <br class="hidden sm:inline" />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-neutral-400">Is Broken.</span>
+              <span class="block text-brand-orange mt-1">Let's find out why.</span>
+            </h1>
+
+            <p class="text-neutral-300 text-lg max-w-xl leading-relaxed">
+              We engineer controlled technical SEO simulations. From catastrophic crawl blocks and canonical conflicts to subtle Core Web Vitals throttling, we diagnose, repair, and validate organic search architecture.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a href="audit.html" class="btn-primary text-sm">
+                <span>Start The Audit</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+              <a href="#whats-broken" class="btn-secondary text-sm">
+                <span>Explore Deliberate Flaws</span>
+              </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="pt-6 border-t border-neutral-800 grid grid-cols-3 gap-6">
+              <div>
+                <div class="text-2xl font-bold text-white tracking-tight">15+</div>
+                <div class="text-xs text-neutral-400 uppercase tracking-wider mt-0.5">Engineered Flaws</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-brand-orange tracking-tight">100%</div>
+                <div class="text-xs text-neutral-400 uppercase tracking-wider mt-0.5">Verifiable Fixes</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-emerald-400 tracking-tight">0 ms</div>
+                <div class="text-xs text-neutral-400 uppercase tracking-wider mt-0.5">Crawl Latency</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right Column: Interactive Audit Scorecard Mockup -->
+          <div class="lg:col-span-5">
+            <div class="bg-[#181818] border border-neutral-700/80 rounded-xl p-6 sm:p-8 shadow-2xl relative">
+              <!-- Header Bar of Mockup -->
+              <div class="flex items-center justify-between pb-6 border-b border-neutral-800">
+                <div>
+                  <span class="text-xs text-neutral-400 uppercase font-mono tracking-wider">DIAGNOSTIC BENCHMARK</span>
+                  <div class="text-lg font-bold text-white mt-0.5">TECHNICAL SEO SCORE</div>
+                </div>
+                <div class="text-right">
+                  <div class="text-3xl font-extrabold text-brand-orange font-mono dynamic-seo-score">98</div>
+                  <div class="text-[11px] text-neutral-400">/ 100 PTS</div>
+                </div>
+              </div>
+
+              <!-- Metric Progress Bars -->
+              <div class="py-6 space-y-4">
+                <div>
+                  <div class="flex justify-between text-xs font-medium mb-1.5">
+                    <span class="text-neutral-300">INDEXING HEALTH</span>
+                    <span class="text-emerald-400 font-mono">100% CANONICAL</span>
+                  </div>
+                  <div class="w-full bg-neutral-800 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-gradient-to-r from-brand-orange to-emerald-500 h-full w-[100%] rounded-full"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-medium mb-1.5">
+                    <span class="text-neutral-300">PERFORMANCE &amp; CWV</span>
+                    <span class="text-emerald-400 font-mono">LCP 1.4s · INP 45ms</span>
+                  </div>
+                  <div class="w-full bg-neutral-800 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-emerald-500 h-full w-[96%] rounded-full"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-medium mb-1.5">
+                    <span class="text-neutral-300">CRAWL ACCESSIBILITY</span>
+                    <span class="text-brand-orange font-mono">0 BOT TRAPS</span>
+                  </div>
+                  <div class="w-full bg-neutral-800 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-brand-orange h-full w-[100%] rounded-full"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-medium mb-1.5">
+                    <span class="text-neutral-300">SCHEMA ENTITY VALIDATION</span>
+                    <span class="text-emerald-400 font-mono">0 ERRORS</span>
+                  </div>
+                  <div class="w-full bg-neutral-800 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-emerald-500 h-full w-[100%] rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Status Notification Chip inside Mockup -->
+              <div class="p-3.5 bg-neutral-900 rounded-lg border border-neutral-800 flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span class="text-neutral-300">Active Audit Mode:</span>
+                </div>
+                <span class="dynamic-seo-grade text-emerald-400 font-semibold">Excellent (All Rescued)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROBLEM STRIP -->
+    <section class="problem-strip py-4 text-xs font-medium text-neutral-300" aria-label="Issue Summary Banner">
+      <div class="site-container">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-2 text-brand-orange font-bold uppercase tracking-wider">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <span>Controlled Flaw Suite:</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-6 text-neutral-400">
+            <span>• Duplicate URLs &amp; Titles</span>
+            <span>• Robots.txt Accidental Disallow</span>
+            <span>• Dead Internal 404 Targets</span>
+            <span>• Missing Self-Referencing Canonicals</span>
+            <span>• Staging Noindex Directive</span>
+            <span>• Missing JSON-LD Schema</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. WHAT'S BROKEN? (WHITE ISSUE GRID) -->
+    <section id="whats-broken" class="py-24 bg-white">
+      <div class="site-container">
+        <div class="max-w-2xl mb-16">
+          <span class="badge badge-orange mb-3">CONTROLLED FAILURE SCENARIOS</span>
+          <h2 class="section-heading text-brand-black">
+            What's Broken in the Flawed Architecture?
+          </h2>
+          <p class="text-neutral-600 mt-4 text-base">
+            Unlike synthetic tutorials, this codebase injects realistic production flaws. Search bots encounter authentic HTTP response codes, orphan clusters, and tag collisions.
+          </p>
+        </div>
+
+        <!-- 6 Issue Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1 -->
+          <div class="agency-card">
+            <div class="flex items-center justify-between mb-4">
+              <span class="badge badge-broken">SEO-001 / SEO-002</span>
+              <span class="text-xs font-mono text-neutral-400">METADATA</span>
+            </div>
+            <h3 class="card-heading text-brand-black mb-3">Duplicate Titles &amp; Empty Meta Descriptions</h3>
+            <p class="text-neutral-600 text-sm mb-6">
+              Primary landing pages share identical boilerplate titles, inducing keyword cannibalization, while service pages suffer snippet truncation in SERPs.
+            </p>
+            <div class="pt-4 border-t border-neutral-100 flex items-center justify-between text-xs">
+              <span class="font-semibold text-brand-orange">Rescue Action:</span>
+              <span class="text-neutral-500">Route-aware dynamic tags</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="agency-card">
+            <div class="flex items-center justify-between mb-4">
+              <span class="badge badge-broken">SEO-004 / SEO-005</span>
+              <span class="text-xs font-mono text-neutral-400">INDEXING</span>
+            </div>
+            <h3 class="card-heading text-brand-black mb-3">Accidental Noindex &amp; Canonical Self-Collisions</h3>
+            <p class="text-neutral-600 text-sm mb-6">
+              The high-converting retail case study carries an accidental noindex header, while the on-page SEO service points its canonical back to the homepage.
+            </p>
+            <div class="pt-4 border-t border-neutral-100 flex items-center justify-between text-xs">
+              <span class="font-semibold text-brand-orange">Rescue Action:</span>
+              <span class="text-neutral-500">Self-referencing canonicals</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="agency-card">
+            <div class="flex items-center justify-between mb-4">
+              <span class="badge badge-broken">SEO-003 / SEO-011</span>
+              <span class="text-xs font-mono text-neutral-400">INTERNAL LINKS</span>
+            </div>
+            <h3 class="card-heading text-brand-black mb-3">Broken Navigational Links &amp; Orphan Guides</h3>
+            <p class="text-neutral-600 text-sm mb-6">
+              Critical service anchors trigger 404 targets, while the 3,000-word crawlability guide is completely severed from the inbound link graph.
+            </p>
+            <div class="pt-4 border-t border-neutral-100 flex items-center justify-between text-xs">
+              <span class="font-semibold text-brand-orange">Rescue Action:</span>
+              <span class="text-neutral-500">Topic cluster internal mesh</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="agency-card">
+            <div class="flex items-center justify-between mb-4">
+              <span class="badge badge-broken">SEO-006 / SEO-007</span>
+              <span class="text-xs font-mono text-neutral-400">CRAWLABILITY</span>
+            </div>
+            <h3 class="card-heading text-brand-black mb-3">Robots.txt Disallow &amp; Malformed XML Sitemap</h3>
+            <p class="text-neutral-600 text-sm mb-6">
+              The crawler is locked out of the entire <code class="bg-neutral-100 px-1 py-0.5 rounded text-neutral-800">/services/</code> directory via robots.txt, while the sitemap references decommissioned URIs.
+            </p>
+            <div class="pt-4 border-t border-neutral-100 flex items-center justify-between text-xs">
+              <span class="font-semibold text-brand-orange">Rescue Action:</span>
+              <span class="text-neutral-500">Canonical XML + Allow rules</span>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="agency-card">
+            <div class="flex items-center justify-between mb-4">
+              <span class="badge badge-broken">SEO-008 / SEO-010</span>
+              <span class="text-xs font-mono text-neutral-400">SEMANTICS</span>
+            </div>
+            <h3 class="card-heading text-brand-black mb-3">Multiple H1 Elements &amp; Missing Schema JSON-LD</h3>
+            <p class="text-neutral-600 text-sm mb-6">
+              Pages render up to three disparate <code class="bg-neutral-100 px-1 py-0.5 rounded text-neutral-800">&lt;h1&gt;</code> tags purely for visual styling, completely omitting structured entity markup.
+            </p>
+            <div class="pt-4 border-t border-neutral-100 flex items-center justify-between text-xs">
+              <span class="font-semibold text-brand-orange">Rescue Action:</span>
+              <span class="text-neutral-500">Schema.org Organization/FAQ</span>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="agency-card">
+            <div class="flex items-center justify-between mb-4">
+              <span class="badge badge-broken">SEO-009 / SEO-014</span>
+              <span class="text-xs font-mono text-neutral-400">PERFORMANCE</span>
+            </div>
+            <h3 class="card-heading text-brand-black mb-3">4.2MB Uncompressed Assets &amp; Layout Shift</h3>
+            <p class="text-neutral-600 text-sm mb-6">
+              Heavy raw image files without explicit aspect ratios trigger an LCP of 4.8 seconds and a severe CLS score of 0.24, degrading mobile user experience.
+            </p>
+            <div class="pt-4 border-t border-neutral-100 flex items-center justify-between text-xs">
+              <span class="font-semibold text-brand-orange">Rescue Action:</span>
+              <span class="text-neutral-500">WebP + zero CLS sizing</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TECHNICAL AUDIT DASHBOARD (DARK SECTION) -->
+    <section class="py-24 bg-brand-charcoal text-white border-t border-neutral-800">
+      <div class="site-container">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <span class="badge badge-orange mb-3">LIVE AUDITOR CONSOLE</span>
+            <h2 class="section-heading text-white">Full-Spectrum Crawl Telemetry</h2>
+            <p class="text-neutral-400 mt-3 max-w-xl">
+              Inspect how simulated Googlebot crawlers navigate the SearchForge architecture across both flawed and rescued states.
+            </p>
+          </div>
+          <div>
+            <a href="audit.html" class="btn-primary">
+              <span>Open Dedicated Audit Hub</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Crawl Matrix Table Mockup -->
+        <div class="bg-[#111111] border border-neutral-800 rounded-xl overflow-hidden shadow-2xl">
+          <div class="p-4 bg-neutral-900 border-b border-neutral-800 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500"></span>
+              <span class="text-xs font-mono text-neutral-400 ml-2">screaming-frog-crawl-matrix.csv</span>
+            </div>
+            <span class="text-xs text-neutral-400 font-mono">18 / 18 URIs Crawled</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs font-mono min-w-[640px]">
+              <thead class="bg-neutral-950 text-neutral-400 border-b border-neutral-800 uppercase tracking-wider">
+                <tr>
+                  <th class="p-4">URI Target</th>
+                  <th class="p-4">Status</th>
+                  <th class="p-4">Robots Directive</th>
+                  <th class="p-4">Canonical URL</th>
+                  <th class="p-4">Title Tag Status</th>
+                  <th class="p-4">Resolution</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-neutral-800/60 text-neutral-300">
+                <tr class="hover:bg-neutral-900/50">
+                  <td class="p-4 font-semibold text-white">/index.html</td>
+                  <td class="p-4 text-emerald-400">200 OK</td>
+                  <td class="p-4 text-neutral-300">index, follow</td>
+                  <td class="p-4 text-emerald-400">Self-referencing</td>
+                  <td class="p-4 text-emerald-400">Unique (54 Chars)</td>
+                  <td class="p-4"><span class="badge badge-fixed">Clean</span></td>
+                </tr>
+                <tr class="hover:bg-neutral-900/50">
+                  <td class="p-4 font-semibold text-white">/about.html</td>
+                  <td class="p-4 text-emerald-400">200 OK</td>
+                  <td class="p-4 text-neutral-300">index, follow</td>
+                  <td class="p-4 text-emerald-400">Self-referencing</td>
+                  <td class="p-4 text-red-400 font-semibold">Duplicate (SEO-001)</td>
+                  <td class="p-4"><span class="badge badge-broken">Flaw Isolated</span></td>
+                </tr>
+                <tr class="hover:bg-neutral-900/50">
+                  <td class="p-4 font-semibold text-white">/services/technical-seo.html</td>
+                  <td class="p-4 text-emerald-400">200 OK</td>
+                  <td class="p-4 text-neutral-300">index, follow</td>
+                  <td class="p-4 text-emerald-400">Self-referencing</td>
+                  <td class="p-4 text-yellow-400 font-semibold">Missing Meta Desc (SEO-002)</td>
+                  <td class="p-4"><span class="badge badge-warning">Fixed in Rescue</span></td>
+                </tr>
+                <tr class="hover:bg-neutral-900/50">
+                  <td class="p-4 font-semibold text-white">/services/social-media-seo.html</td>
+                  <td class="p-4 text-red-400 font-bold">404 NOT FOUND</td>
+                  <td class="p-4 text-neutral-500">Unreachable</td>
+                  <td class="p-4 text-neutral-500">None</td>
+                  <td class="p-4 text-red-400 font-semibold">Broken Target (SEO-003)</td>
+                  <td class="p-4"><span class="badge badge-broken">Redirected 301</span></td>
+                </tr>
+                <tr class="hover:bg-neutral-900/50">
+                  <td class="p-4 font-semibold text-white">/case-studies/retail-growth.html</td>
+                  <td class="p-4 text-emerald-400">200 OK</td>
+                  <td class="p-4 text-red-400 font-bold">noindex, nofollow (SEO-005)</td>
+                  <td class="p-4 text-emerald-400">Self-referencing</td>
+                  <td class="p-4 text-emerald-400">Valid Title</td>
+                  <td class="p-4"><span class="badge badge-broken">De-indexed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. RESCUE PROCESS: 01 Discover -> 02 Diagnose -> 03 Fix -> 04 Verify -->
+    <section class="py-24 bg-brand-offWhite">
+      <div class="site-container">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="badge badge-orange mb-3">METHODICAL ENGINEERING</span>
+          <h2 class="section-heading text-brand-black">The Technical Rescue Workflow</h2>
+          <p class="text-neutral-600 mt-4 text-base">
+            Every technical SEO failure requires a reproducible diagnostic pipeline rather than guesswork.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Step 1 -->
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 shadow-sm relative">
+            <div class="text-4xl font-extrabold text-brand-orange/30 font-mono mb-4">01</div>
+            <h3 class="text-lg font-bold text-brand-black mb-2">Discover</h3>
+            <p class="text-neutral-600 text-sm leading-relaxed">
+              Automated headless crawling mimicking Googlebot Desktop &amp; Smartphone to map all raw status codes and HTML attributes.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 shadow-sm relative">
+            <div class="text-4xl font-extrabold text-brand-orange/30 font-mono mb-4">02</div>
+            <h3 class="text-lg font-bold text-brand-black mb-2">Diagnose</h3>
+            <p class="text-neutral-600 text-sm leading-relaxed">
+              Isolate root cause in route handlers, document headers, rendering frameworks, or server-side caching rules.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 shadow-sm relative">
+            <div class="text-4xl font-extrabold text-brand-orange/30 font-mono mb-4">03</div>
+            <h3 class="text-lg font-bold text-brand-black mb-2">Fix</h3>
+            <p class="text-neutral-600 text-sm leading-relaxed">
+              Deploy code-level remediations: self-referencing canonicals, 301 consolidation, Schema JSON-LD injection, and WebP compression.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="bg-white p-8 rounded-lg border border-neutral-200 shadow-sm relative">
+            <div class="text-4xl font-extrabold text-brand-orange/30 font-mono mb-4">04</div>
+            <h3 class="text-lg font-bold text-brand-black mb-2">Verify</h3>
+            <p class="text-neutral-600 text-sm leading-relaxed">
+              Re-crawl target URIs via CI/CD test gates, validate Rich Results, and confirm zero regression across Core Web Vitals.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. BEFORE / AFTER TECHNICAL COMPARISON -->
+    <section class="py-24 bg-white">
+      <div class="site-container">
+        <div class="max-w-2xl mb-16">
+          <span class="badge badge-orange mb-3">MEASURABLE IMPACT</span>
+          <h2 class="section-heading text-brand-black">Before Rescue vs. After Rescue</h2>
+          <p class="text-neutral-600 mt-4 text-base">
+            Transparent before/after metrics showing the resolution of all 15 deliberate technical vulnerabilities.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- Before Card (Broken State) -->
+          <div class="p-8 rounded-xl bg-neutral-900 border border-red-900/50 text-white">
+            <div class="flex items-center justify-between pb-6 border-b border-neutral-800">
+              <div class="flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
+                <h3 class="text-xl font-bold">Pre-Rescue (Flawed State)</h3>
+              </div>
+              <span class="badge badge-broken">Score: 42/100</span>
+            </div>
+            
+            <ul class="py-6 space-y-4 text-sm text-neutral-300">
+              <li class="flex items-center justify-between">
+                <span>Broken Internal Links:</span>
+                <span class="font-mono font-bold text-red-400">12 Dead Links</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Missing / Duplicate Titles:</span>
+                <span class="font-mono font-bold text-red-400">11 Pages</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Missing Image Alt Text:</span>
+                <span class="font-mono font-bold text-red-400">18 Assets</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Canonical Conflicts:</span>
+                <span class="font-mono font-bold text-red-400">5 Mismatched URLs</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Largest Contentful Paint (LCP):</span>
+                <span class="font-mono font-bold text-red-400">4.8s (Poor)</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Cumulative Layout Shift (CLS):</span>
+                <span class="font-mono font-bold text-red-400">0.24 (High Instability)</span>
+              </li>
+            </ul>
+
+            <div class="p-4 bg-red-950/30 rounded-lg border border-red-800/40 text-xs text-red-300">
+              Bot Crawl Result: Crawlers choked on redirect loops, blocked paths in robots.txt, and failed to index 7 core revenue pages.
+            </div>
+          </div>
+
+          <!-- After Card (Rescued State) -->
+          <div class="p-8 rounded-xl bg-neutral-900 border border-emerald-900/50 text-white">
+            <div class="flex items-center justify-between pb-6 border-b border-neutral-800">
+              <div class="flex items-center gap-3">
+                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                <h3 class="text-xl font-bold">Post-Rescue (Remediated)</h3>
+              </div>
+              <span class="badge badge-fixed">Score: 98/100</span>
+            </div>
+            
+            <ul class="py-6 space-y-4 text-sm text-neutral-300">
+              <li class="flex items-center justify-between">
+                <span>Broken Internal Links:</span>
+                <span class="font-mono font-bold text-emerald-400">0 Dead Links</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Missing / Duplicate Titles:</span>
+                <span class="font-mono font-bold text-emerald-400">0 Issues (100% Unique)</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Missing Image Alt Text:</span>
+                <span class="font-mono font-bold text-emerald-400">0 Assets (All Annotated)</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Canonical Conflicts:</span>
+                <span class="font-mono font-bold text-emerald-400">0 Errors (Strict Self-Ref)</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Largest Contentful Paint (LCP):</span>
+                <span class="font-mono font-bold text-emerald-400">1.4s (Sub-2.5s Target)</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Cumulative Layout Shift (CLS):</span>
+                <span class="font-mono font-bold text-emerald-400">0.01 (Near Zero)</span>
+              </li>
+            </ul>
+
+            <div class="p-4 bg-emerald-950/30 rounded-lg border border-emerald-800/40 text-xs text-emerald-300">
+              Bot Crawl Result: 100% of intended pages indexed, structured data validated on Google Rich Results, and instant mobile load.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CORE SERVICES PREVIEW -->
+    <section class="py-24 bg-brand-offWhite border-t border-neutral-200">
+      <div class="site-container">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <span class="badge badge-orange mb-3">SPECIALIZED PRACTICES</span>
+            <h2 class="section-heading text-brand-black">Our Technical Capabilities</h2>
+            <p class="text-neutral-600 mt-3 max-w-xl">
+              Precision architecture services designed for modern JavaScript web applications, headless stacks, and enterprise catalogs.
+            </p>
+          </div>
+          <div>
+            <a href="services/index.html" class="btn-secondary-light">
+              <span>View All Services</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-orange transition">
+            <div class="w-12 h-12 rounded bg-neutral-900 text-brand-orange flex items-center justify-center mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-base font-bold text-brand-black mb-2">Technical SEO</h3>
+            <p class="text-neutral-600 text-xs leading-relaxed mb-4">
+              Crawl budget auditing, canonicalization trees, SSR hydration diagnostics, and bot log file analysis.
+            </p>
+            <a href="services/technical-seo.html" class="text-xs font-semibold text-brand-orange hover:underline flex items-center gap-1">
+              <span>Explore Practice</span> &rarr;
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-orange transition">
+            <div class="w-12 h-12 rounded bg-neutral-900 text-brand-orange flex items-center justify-center mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="text-base font-bold text-brand-black mb-2">On-Page SEO</h3>
+            <p class="text-neutral-600 text-xs leading-relaxed mb-4">
+              Heading hierarchy restructuring, semantic document outlines, and high-CTR metadata engineering.
+            </p>
+            <a href="services/on-page-seo.html" class="text-xs font-semibold text-brand-orange hover:underline flex items-center gap-1">
+              <span>Explore Practice</span> &rarr;
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-orange transition">
+            <div class="w-12 h-12 rounded bg-neutral-900 text-brand-orange flex items-center justify-center mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-base font-bold text-brand-black mb-2">Local SEO</h3>
+            <p class="text-neutral-600 text-xs leading-relaxed mb-4">
+              Multi-location schema markup, geo-sitemaps, NAP data synchronization, and local knowledge panels.
+            </p>
+            <a href="services/local-seo.html" class="text-xs font-semibold text-brand-orange hover:underline flex items-center gap-1">
+              <span>Explore Practice</span> &rarr;
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-neutral-200 hover:border-brand-orange transition">
+            <div class="w-12 h-12 rounded bg-neutral-900 text-brand-orange flex items-center justify-center mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-base font-bold text-brand-black mb-2">SEO Audits</h3>
+            <p class="text-neutral-600 text-xs leading-relaxed mb-4">
+              200-point forensic audits uncovering silent indexing drop-offs, JavaScript rendering gaps, and speed bottlenecks.
+            </p>
+            <a href="services/seo-audits.html" class="text-xs font-semibold text-brand-orange hover:underline flex items-center gap-1">
+              <span>Explore Practice</span> &rarr;
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CASE STUDY FEATURE -->
+    <section class="py-24 bg-white">
+      <div class="site-container">
+        <div class="p-8 lg:p-12 rounded-2xl bg-neutral-900 border border-neutral-800 text-white relative overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2">
+                <span class="badge badge-fixed">CASE STUDY RESCUE</span>
+                <span class="text-xs text-neutral-400 font-mono">ECOMMERCE &amp; RETAIL</span>
+              </div>
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                How Omnichannel Retailer Restored +240% Organic Revenue After Bot Trap Catastrophe
+              </h2>
+              <p class="text-neutral-300 text-sm leading-relaxed max-w-xl">
+                A faceted navigation filter exploded into 450,000 parameter-bloated URLs, consuming all crawl budget and burying 6,000 product SKUs. See how we reversed the decline in 21 days.
+              </p>
+              <div class="grid grid-cols-3 gap-6 pt-4 border-t border-neutral-800">
+                <div>
+                  <div class="text-2xl font-bold text-brand-orange">+240%</div>
+                  <div class="text-xs text-neutral-400">Organic Revenue</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-emerald-400">99.8%</div>
+                  <div class="text-xs text-neutral-400">Index Cleanliness</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-white">1.1s</div>
+                  <div class="text-xs text-neutral-400">Target LCP Speed</div>
+                </div>
+              </div>
+              <div>
+                <a href="case-studies/retail-growth.html" class="btn-primary text-xs">
+                  <span>Read Full Case Study</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 bg-neutral-950 p-6 rounded-xl border border-neutral-800 space-y-3 font-mono text-xs">
+              <div class="text-neutral-400 uppercase text-[11px] font-bold pb-2 border-b border-neutral-800">Diagnostic Interventions:</div>
+              <div class="flex items-center justify-between text-neutral-300 py-1">
+                <span>Faceted Canonical Tagging</span>
+                <span class="text-emerald-400 font-bold">&check; Implemented</span>
+              </div>
+              <div class="flex items-center justify-between text-neutral-300 py-1">
+                <span>Robots.txt Parameter Disallow</span>
+                <span class="text-emerald-400 font-bold">&check; Resolved</span>
+              </div>
+              <div class="flex items-center justify-between text-neutral-300 py-1">
+                <span>Server-Side Prerendering</span>
+                <span class="text-emerald-400 font-bold">&check; Configured</span>
+              </div>
+              <div class="flex items-center justify-between text-neutral-300 py-1">
+                <span>Core Web Vitals INP/LCP</span>
+                <span class="text-emerald-400 font-bold">&check; 99/100 Validated</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. DARK CTA SECTION -->
+    <section class="py-24 bg-brand-charcoal text-white border-t border-neutral-800 text-center relative overflow-hidden">
+      <div class="site-container relative z-10 max-w-3xl mx-auto space-y-6">
+        <span class="badge badge-orange">DEPLOYMENT READY</span>
+        <h2 class="section-heading text-white">
+          Ready to Audit and Rescue Your Infrastructure?
+        </h2>
+        <p class="text-neutral-400 text-base leading-relaxed">
+          Whether you are training junior SEOs or diagnosing an enterprise web application, start by running our live forensic crawl suite.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <a href="audit.html" class="btn-primary text-sm px-8 py-4">
+            <span>Launch Interactive Audit Hub</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </a>
+          <a href="contact.html" class="btn-secondary text-sm px-8 py-4">
+            <span>Request Diagnostic Review</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 11. Multi-Column Dark Agency Footer -->
+  <footer class="bg-brand-black text-white border-t border-neutral-800 py-16">
+    <div class="site-container">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-neutral-800/80">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-[#181818] border border-brand-orange/40 flex items-center justify-center">
+              <svg class="w-4 h-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <span class="text-white font-extrabold text-base tracking-tight">SEARCH<span class="text-brand-orange">FORGE</span></span>
+          </a>
+          <p class="text-neutral-400 text-xs leading-relaxed max-w-sm">
+            SearchForge SEO is an elite technical SEO agency and learning laboratory. We build, break, diagnose, and remediate complex search architecture.
+          </p>
+          <div class="pt-2 text-xs text-neutral-400 space-y-1">
+            <div class="text-white font-medium">Project Owner: Arya Tiwari <span class="text-brand-orange font-mono text-[11px]">(CSE Student)</span></div>
+            <div>Bennett University &middot; Greater Noida, India</div>
+            <div class="font-mono text-[11px] text-neutral-400">
+              <a href="tel:+919999606103" class="hover:text-brand-orange">+91 9999606103</a> &middot; <a href="mailto:arya2tiwari@gmail.com" class="hover:text-brand-orange">arya2tiwari@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 1: Architecture -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Core Practices</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="services/technical-seo.html" class="hover:text-brand-orange transition">Technical SEO</a></li>
+            <li><a href="services/on-page-seo.html" class="hover:text-brand-orange transition">On-Page Architecture</a></li>
+            <li><a href="services/local-seo.html" class="hover:text-brand-orange transition">Local SEO &amp; Entities</a></li>
+            <li><a href="services/seo-audits.html" class="hover:text-brand-orange transition">Forensic Audits</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Learning & Assets -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Documentation</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="audit.html" class="hover:text-brand-orange transition">SEO Audit Hub</a></li>
+            <li><a href="blog/technical-seo-checklist.html" class="hover:text-brand-orange transition">45-Point Audit Checklist</a></li>
+            <li><a href="blog/crawlability-guide.html" class="hover:text-brand-orange transition">Crawlability Deep Dive</a></li>
+            <li><a href="blog/core-web-vitals-guide.html" class="hover:text-brand-orange transition">Core Web Vitals Guide</a></li>
+            <li><a href="sitemap.xml" target="_blank" class="hover:text-brand-orange transition">XML Sitemap</a></li>
+            <li><a href="robots.txt" target="_blank" class="hover:text-brand-orange transition">Robots.txt Directives</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Company & Legal -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Company</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="about.html" class="hover:text-brand-orange transition">About Us</a></li>
+            <li><a href="case-studies/retail-growth.html" class="hover:text-brand-orange transition">Retail Case Study</a></li>
+            <li><a href="faq.html" class="hover:text-brand-orange transition">Frequently Asked Questions</a></li>
+            <li><a href="contact.html" class="hover:text-brand-orange transition">Contact Team</a></li>
+            <li><a href="privacy-policy.html" class="hover:text-brand-orange transition">Privacy Policy</a></li>
+            <li><a href="terms.html" class="hover:text-brand-orange transition">Terms of Service</a></li>
+            <li><a href="404.html" class="hover:text-brand-orange transition">Custom 404 Error Page</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-neutral-400 gap-4">
+        <div>
+          &copy; 2026 SearchForge SEO &middot; Designed &amp; Developed by <span class="text-white font-semibold">Arya Tiwari</span> (CSE Student, Bennett University, Greater Noida)
+        </div>
+        <div class="flex items-center gap-3 font-mono text-xs">
+          <a href="https://httpsarya.github.io/Arya_Tiwari_portfolio_12/" target="_blank" rel="noopener" class="text-brand-orange hover:underline">Portfolio</a>
+          <span class="text-neutral-600">&middot;</span>
+          <a href="https://github.com/httpsarya" target="_blank" rel="noopener" class="text-brand-orange hover:underline">GitHub</a>
+          <span class="text-neutral-600">&middot;</span>
+          <a href="https://linkedin.com/in/arya-tiwari-01ba84292/" target="_blank" rel="noopener" class="text-brand-orange hover:underline">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/audit-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

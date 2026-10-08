@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Retail Growth Rescue Case Study | SearchForge SEO</title>
+  <meta name="description" content="Read how SearchForge diagnosed faceted navigation crawl traps, resolved accidental noindex tags, and restored +240% organic revenue for a national retail brand.">
+  <link rel="canonical" href="https://searchforge-seo.com/case-studies/retail-growth.html">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#FD6909">
+
+  <!-- Open Graph Protocol -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://searchforge-seo.com/case-studies/retail-growth.html">
+  <meta property="og:title" content="Retail Growth Rescue Case Study | SearchForge SEO">
+  <meta property="og:description" content="Postmortem: How we dismantled a 450k-URL crawler bot trap and recovered organic search revenues.">
+  <meta property="og:image" content="https://searchforge-seo.com/assets/images/og-preview.png">
+
+  <!-- Tailwind CSS & Custom Design System -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FD6909',
+              orangeHover: '#E95700',
+              black: '#0D0D0D',
+              charcoal: '#181818',
+              surface: '#242424',
+              surfaceLight: '#3A3A3A',
+              offWhite: '#F5F5F5',
+              text: '#222222',
+              muted: '#999999',
+              border: '#EAEAEA'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://searchforge-seo.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Case Studies",
+        "item": "https://searchforge-seo.com/case-studies/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Retail Growth Rescue",
+        "item": "https://searchforge-seo.com/case-studies/retail-growth.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-brand-text flex flex-col min-h-screen">
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="site-container">
+      <div class="flex items-center justify-between h-20">
+        <a href="../index.html" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-10 h-10 rounded-md bg-[#181818] border border-brand-orange/40 flex items-center justify-center transition-all group-hover:border-brand-orange">
+            <svg class="w-5 h-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-white font-extrabold text-lg tracking-tight leading-none">SEARCH<span class="text-brand-orange">FORGE</span></span>
+            <span class="text-[10px] text-neutral-400 font-mono tracking-widest uppercase">POSTMORTEM</span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8" aria-label="Primary Navigation">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../about.html" class="nav-link">About</a>
+          <a href="../services/index.html" class="nav-link">Services</a>
+          <a href="index.html" class="nav-link active">Case Studies</a>
+          <a href="../blog/index.html" class="nav-link">Blog &amp; Guides</a>
+          <a href="../faq.html" class="nav-link">FAQ</a>
+          <a href="../contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="../audit.html" class="btn-primary text-xs uppercase tracking-wider py-3 px-5">Audit Hub</a>
+        </div>
+
+        <button id="mobile-menu-toggle" class="lg:hidden text-neutral-300 hover:text-white p-2" aria-expanded="false" aria-controls="mobile-nav-menu" aria-label="Toggle navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobile-nav-menu" class="hidden lg:hidden border-t border-neutral-800 py-4 space-y-3 bg-[#0D0D0D]">
+        <a href="../index.html" class="block text-neutral-300 hover:text-white py-1.5">Home</a>
+        <a href="../about.html" class="block text-neutral-300 hover:text-white py-1.5">About</a>
+        <a href="../services/index.html" class="block text-neutral-300 hover:text-white py-1.5">Services</a>
+        <a href="index.html" class="block text-brand-orange font-semibold py-1.5">Case Studies</a>
+        <a href="../blog/index.html" class="block text-neutral-300 hover:text-white py-1.5">Blog &amp; Guides</a>
+        <a href="../faq.html" class="block text-neutral-300 hover:text-white py-1.5">FAQ</a>
+        <a href="../contact.html" class="block text-neutral-300 hover:text-white py-1.5">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1">
+
+    <section class="hero-pattern py-20 text-white border-b border-brand-surfaceLight">
+      <div class="site-container">
+        <nav class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-6" aria-label="Breadcrumbs">
+          <a href="../index.html" class="hover:text-brand-orange">Home</a>
+          <span>/</span>
+          <a href="index.html" class="hover:text-brand-orange">Case Studies</a>
+          <span>/</span>
+          <span class="text-white">Retail Growth Rescue</span>
+        </nav>
+
+        <div class="max-w-4xl space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="badge badge-fixed">TECHNICAL RESCUE</span>
+            <span class="text-xs font-mono text-neutral-400">CLIENT: VALKYRIE ATHLETICS (RETAIL)</span>
+          </div>
+          <h1 class="hero-heading text-white">
+            How Omnichannel Retailer Restored +240% Organic Revenue After Faceted Crawl Catastrophe
+          </h1>
+          <p class="text-neutral-300 text-lg leading-relaxed">
+            A comprehensive postmortem examining the diagnostic workflow: from discovering 450,000 parameter-bloated URLs to eliminating crawl traps and reinstating 6,000 product SKUs into Google's primary index.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Breakdown Sections -->
+    <section class="py-24 bg-white">
+      <div class="site-container max-w-4xl space-y-16">
+        
+        <!-- 1. Initial Problem -->
+        <div class="space-y-4">
+          <span class="badge badge-broken">STAGE 1: THE CRISIS</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-black">The Initial Problem</h2>
+          <p class="text-neutral-700 leading-relaxed text-base">
+            In Q1 2026, Valkyrie Athletics launched a redesigned eCommerce catalog featuring dynamic multi-attribute filtering (color, size, price, availability, fabric). Within three weeks, organic traffic plummeted by 64%, resulting in an estimated \$180,000 weekly revenue loss.
+          </p>
+          <div class="p-6 bg-red-50 border border-red-200 rounded-lg text-sm text-red-900 space-y-2">
+            <strong>Key Symptoms:</strong>
+            <ul class="list-disc list-inside space-y-1 text-xs">
+              <li>Googlebot crawl volume surged to 1.8M requests/day, yet indexation dropped from 14,200 pages to under 4,100 pages.</li>
+              <li>Google Search Console reported massive "Crawled - currently not indexed" spikes.</li>
+              <li>Top 100 organic revenue product pages fell out of the top 30 search results.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. The SEO Audit -->
+        <div class="space-y-4 pt-8 border-t border-neutral-200">
+          <span class="badge badge-orange">STAGE 2: FORENSIC AUDIT</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-black">The SEO Diagnostic Audit</h2>
+          <p class="text-neutral-700 leading-relaxed text-base">
+            SearchForge performed a log-file deconstruction cross-referenced with Screaming Frog headless spider crawls. Within 48 hours, the diagnostic team isolated three critical architectural failures:
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+            <div class="agency-card bg-neutral-50 p-6">
+              <h3 class="font-bold text-brand-black text-sm mb-2">1. Spider Trap Matrix</h3>
+              <p class="text-neutral-600 text-xs leading-relaxed">
+                The filter component generated permutation URLs without canonicalization or sorting parameter order, producing over 450,000 duplicate URL variants.
+              </p>
+            </div>
+            <div class="agency-card bg-neutral-50 p-6">
+              <h3 class="font-bold text-brand-black text-sm mb-2">2. Staging Directives Leakage</h3>
+              <p class="text-neutral-600 text-xs leading-relaxed">
+                Staging environment robots headers (<code class="text-red-500 font-mono">noindex, nofollow</code>) were unintentionally included on high-margin product category pages during deploy.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Issues Discovered Matrix -->
+        <div class="space-y-4 pt-8 border-t border-neutral-200">
+          <span class="badge badge-orange">STAGE 3: DISCOVERY</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-black">Specific Issues Discovered</h2>
+          <div class="border border-neutral-200 rounded-xl overflow-hidden shadow-sm overflow-x-auto">
+            <table class="w-full text-left text-xs font-mono min-w-[500px]">
+              <thead class="bg-neutral-900 text-white uppercase">
+                <tr>
+                  <th class="p-3">Issue Tag</th>
+                  <th class="p-3">Severity</th>
+                  <th class="p-3">Component</th>
+                  <th class="p-3">Root Cause</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-neutral-200 text-neutral-700">
+                <tr>
+                  <td class="p-3 font-bold text-red-600">BOT-TRAP-01</td>
+                  <td class="p-3"><span class="badge badge-broken">Critical</span></td>
+                  <td class="p-3">/shop/apparel/*</td>
+                  <td class="p-3">Infinite query string combinations</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-red-600">NOINDEX-LEAK</td>
+                  <td class="p-3"><span class="badge badge-broken">Critical</span></td>
+                  <td class="p-3">Case Study &amp; Category Headers</td>
+                  <td class="p-3">Accidental noindex meta tag deployment</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold text-yellow-600">CWV-INP-03</td>
+                  <td class="p-3"><span class="badge badge-warning">High</span></td>
+                  <td class="p-3">Product Detail Hydration</td>
+                  <td class="p-3">480ms long-tasks blocking main thread</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4. Fixes & Engineering Remediations -->
+        <div class="space-y-4 pt-8 border-t border-neutral-200">
+          <span class="badge badge-fixed">STAGE 4: RESCUE IMPLEMENTATION</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-black">The Technical Rescue Actions</h2>
+          <div class="space-y-4 text-sm text-neutral-700">
+            <div class="p-5 bg-neutral-900 text-white rounded-lg space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-brand-orange font-bold text-xs uppercase font-mono">&check; Remediation 1: Canonical Parameter Stripping</span>
+                <span class="badge badge-fixed">Fixed</span>
+              </div>
+              <p class="text-xs text-neutral-300">
+                Implemented strict self-referencing canonical rules on primary collection URIs while rewriting all filtered URLs with canonical tags pointing back to the clean parent category.
+              </p>
+            </div>
+
+            <div class="p-5 bg-neutral-900 text-white rounded-lg space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-brand-orange font-bold text-xs uppercase font-mono">&check; Remediation 2: Robots.txt Crawl Boundary Enforcement</span>
+                <span class="badge badge-fixed">Fixed</span>
+              </div>
+              <p class="text-xs text-neutral-300">
+                Added targeted <code class="text-emerald-400">Disallow: /*?*filter=</code> and <code class="text-emerald-400">Disallow: /*?*sort=</code> directives in robots.txt, cutting bot waste by 89% on day one.
+              </p>
+            </div>
+
+            <div class="p-5 bg-neutral-900 text-white rounded-lg space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-brand-orange font-bold text-xs uppercase font-mono">&check; Remediation 3: Purging Staging Noindex Tags</span>
+                <span class="badge badge-fixed">Fixed</span>
+              </div>
+              <p class="text-xs text-neutral-300">
+                Replaced hardcoded meta tags with dynamic environment-aware helpers, ensuring <code class="text-emerald-400">&lt;meta name="robots" content="index, follow"&gt;</code> is asserted in production builds.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Results & Validation -->
+        <div class="space-y-4 pt-8 border-t border-neutral-200">
+          <span class="badge badge-fixed">STAGE 5: VERIFICATION &amp; ROI</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-black">Validated Results</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+            <div class="p-6 bg-neutral-50 rounded-xl border border-neutral-200 text-center">
+              <div class="text-4xl font-extrabold text-brand-orange font-mono">+240%</div>
+              <div class="text-xs text-neutral-600 mt-2 font-medium">Organic Revenue Recovery</div>
+            </div>
+            <div class="p-6 bg-neutral-50 rounded-xl border border-neutral-200 text-center">
+              <div class="text-4xl font-extrabold text-emerald-600 font-mono">100%</div>
+              <div class="text-xs text-neutral-600 mt-2 font-medium">SKU Index Re-instatement</div>
+            </div>
+            <div class="p-6 bg-neutral-50 rounded-xl border border-neutral-200 text-center">
+              <div class="text-4xl font-extrabold text-brand-black font-mono">21 Days</div>
+              <div class="text-xs text-neutral-600 mt-2 font-medium">Turnaround to Full Recovery</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deliberate Flaw Context Callout: SEO-005 -->
+        <div class="p-6 rounded-xl bg-neutral-50 border border-neutral-200" data-flawed-target data-flaw-id="SEO-005">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded bg-brand-orange/10 text-brand-orange flex items-center justify-center font-mono font-bold shrink-0">!</div>
+            <div>
+              <h4 class="text-sm font-bold text-brand-black">Controlled Flaw Reference: Accidental Noindex Directive</h4>
+              <p class="text-neutral-600 text-xs mt-1 leading-relaxed">
+                In flawed mode, this exact case study page carried an accidental <code class="text-red-500 font-mono">&lt;meta name="robots" content="noindex, follow"&gt;</code> directive, demonstrating how easily a high-converting revenue driver can be wiped from search visibility due to a staging configuration leak. In rescued mode, it is properly indexed.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Multi-Column Dark Agency Footer -->
+  <footer class="bg-brand-black text-white border-t border-neutral-800 py-16">
+    <div class="site-container">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-neutral-800/80">
+        <div class="lg:col-span-2 space-y-4">
+          <a href="../index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-[#181818] border border-brand-orange/40 flex items-center justify-center">
+              <svg class="w-4 h-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <span class="text-white font-extrabold text-base tracking-tight">SEARCH<span class="text-brand-orange">FORGE</span></span>
+          </a>
+          <p class="text-neutral-400 text-xs leading-relaxed max-w-sm">
+            SearchForge SEO is an elite technical SEO agency and learning laboratory. We build, break, diagnose, and remediate complex search architecture.
+          </p>
+          <div class="pt-2 text-xs text-neutral-400 space-y-1">
+            <div class="text-white font-medium">Project Owner: Arya Tiwari <span class="text-brand-orange font-mono text-[11px]">(CSE Student)</span></div>
+            <div>Bennett University &middot; Greater Noida, India</div>
+            <div class="font-mono text-[11px] text-neutral-400">
+              <a href="tel:+919999606103" class="hover:text-brand-orange">+91 9999606103</a> &middot; <a href="mailto:arya2tiwari@gmail.com" class="hover:text-brand-orange">arya2tiwari@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Core Practices</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="../services/technical-seo.html" class="hover:text-brand-orange">Technical SEO</a></li>
+            <li><a href="../services/on-page-seo.html" class="hover:text-brand-orange">On-Page Architecture</a></li>
+            <li><a href="../services/local-seo.html" class="hover:text-brand-orange">Local SEO &amp; Entities</a></li>
+            <li><a href="../services/seo-audits.html" class="hover:text-brand-orange">Forensic Audits</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Documentation</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="../audit.html" class="hover:text-brand-orange">SEO Audit Hub</a></li>
+            <li><a href="../blog/technical-seo-checklist.html" class="hover:text-brand-orange">45-Point Audit Checklist</a></li>
+            <li><a href="../blog/crawlability-guide.html" class="hover:text-brand-orange">Crawlability Deep Dive</a></li>
+            <li><a href="../blog/core-web-vitals-guide.html" class="hover:text-brand-orange">Core Web Vitals Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Company</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="../about.html" class="hover:text-brand-orange">About Us</a></li>
+            <li><a href="retail-growth.html" class="hover:text-brand-orange text-brand-orange font-semibold">Retail Case Study</a></li>
+            <li><a href="../faq.html" class="hover:text-brand-orange">Frequently Asked Questions</a></li>
+            <li><a href="../contact.html" class="hover:text-brand-orange">Contact Team</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-neutral-400 gap-4">
+        <div>
+          &copy; 2026 SearchForge SEO &middot; Designed &amp; Developed by <span class="text-white font-semibold">Arya Tiwari</span> (CSE Student, Bennett University, Greater Noida)
+        </div>
+        <div class="flex items-center gap-3 font-mono text-xs">
+          <a href="https://httpsarya.github.io/Arya_Tiwari_portfolio_12/" target="_blank" rel="noopener" class="text-brand-orange hover:underline">Portfolio</a>
+          <span class="text-neutral-600">&middot;</span>
+          <a href="https://github.com/httpsarya" target="_blank" rel="noopener" class="text-brand-orange hover:underline">GitHub</a>
+          <span class="text-neutral-600">&middot;</span>
+          <a href="https://linkedin.com/in/arya-tiwari-01ba84292/" target="_blank" rel="noopener" class="text-brand-orange hover:underline">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/audit-data.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
