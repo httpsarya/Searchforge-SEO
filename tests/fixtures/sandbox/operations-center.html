@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live SEO Operations Center | SearchForge Technical SEO</title>
+  <meta name="description" content="Working, evidence-driven SEO operations center. Crawls live local test site, streams real background events, detects 15 SEO faults, safely repairs sandbox issues, and exports verification proof.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <style>
+    /* Operations Center Dark Theme & Dashboard Layout */
+    body.ops-body {
+      background-color: #0D0D0D;
+      color: #E5E5E5;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .ops-header {
+      background-color: #141414;
+      border-bottom: 1px solid #262626;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .ops-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .ops-logo-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #FD6909;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(253, 105, 9, 0.8);
+    }
+
+    .ops-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+    }
+
+    .ops-nav a {
+      color: #A3A3A3;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .ops-nav a:hover, .ops-nav a.active {
+      color: #FD6909;
+    }
+
+    .ops-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* Mentor Demo Banner */
+    .mentor-strip {
+      background: linear-gradient(90deg, rgba(253, 105, 9, 0.12) 0%, rgba(20, 20, 20, 0.9) 100%);
+      border: 1px solid rgba(253, 105, 9, 0.4);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .mentor-step-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      background: #1F1F1F;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid #333;
+      color: #CCC;
+    }
+
+    .mentor-step-pill strong {
+      color: #FD6909;
+    }
+
+    .btn-mentor-primary {
+      background-color: #FD6909;
+      color: #FFFFFF;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s ease;
+    }
+
+    .btn-mentor-primary:hover {
+      background-color: #E95700;
+    }
+
+    .btn-secondary {
+      background-color: #262626;
+      color: #E5E5E5;
+      border: 1px solid #3A3A3A;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: #333333;
+    }
+
+    .btn-danger {
+      background-color: rgba(239, 68, 68, 0.15);
+      color: #EF4444;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .btn-danger:hover {
+      background-color: rgba(239, 68, 68, 0.25);
+    }
+
+    /* Controls Bar */
+    .controls-bar {
+      background-color: #181818;
+      border: 1px solid #262626;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .input-field {
+      background-color: #101010;
+      border: 1px solid #333;
+      color: #FFF;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #FD6909;
+    }
+
+    /* Status Pills */
+    .status-pill {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+    .status-idle { background: #262626; color: #888; }
+    .status-running { background: rgba(253, 105, 9, 0.2); color: #FD6909; animation: pulse 1.5s infinite; }
+    .status-completed { background: rgba(16, 185, 129, 0.2); color: #10B981; }
+    .status-cancelled { background: rgba(239, 68, 68, 0.2); color: #EF4444; }
+    .status-failed { background: rgba(239, 68, 68, 0.2); color: #EF4444; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    /* Telemetry Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .metric-card {
+      background-color: #181818;
+      border: 1px solid #262626;
+      border-radius: 10px;
+      padding: 18px 20px;
+      position: relative;
+    }
+
+    .metric-card-lbl {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888;
+      font-weight: 600;
+    }
+
+    .metric-card-val {
+      font-size: 32px;
+      font-weight: 800;
+      color: #FFF;
+      margin-top: 6px;
+      line-height: 1.1;
+    }
+
+    .metric-card-sub {
+      font-size: 11px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    /* Operations Workspace Grid (Left/Right) */
+    .ops-workspace {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 1024px) {
+      .ops-workspace {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .panel-card {
+      background-color: #181818;
+      border: 1px solid #262626;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .panel-header {
+      background-color: #1E1E1E;
+      border-bottom: 1px solid #2A2A2A;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .panel-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Live Activity Console */
+    .console-box {
+      background-color: #0A0A0A;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 11.5px;
+      height: 480px;
+      overflow-y: auto;
+      padding: 12px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .log-row {
+      padding: 4px 6px;
+      margin-bottom: 2px;
+      border-radius: 3px;
+      line-height: 1.45;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .log-row:hover {
+      background-color: #141414;
+    }
+
+    .log-time { color: #555; }
+    .badge-stage {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    .stage-queue { background: #333; color: #BBB; }
+    .stage-fetch { background: #1E3A8A; color: #93C5FD; }
+    .stage-parse { background: #701A75; color: #F5D0FE; }
+    .stage-rule { background: #7C2D12; color: #FDBA74; }
+    .stage-fix { background: #064E3B; color: #6EE7B7; }
+    .stage-verify { background: #14532D; color: #86EFAC; }
+
+    .badge-issue {
+      background: rgba(253, 105, 9, 0.2);
+      color: #FD6909;
+      font-weight: 700;
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .log-url { color: #38BDF8; }
+    .log-msg { color: #D4D4D4; word-break: break-all; }
+
+    .log-info .log-msg { color: #CCCCCC; }
+    .log-warn .log-msg { color: #FBBF24; font-weight: 500; }
+    .log-error .log-msg { color: #F87171; font-weight: 600; }
+    .log-success .log-msg { color: #34D399; font-weight: 600; }
+
+    /* Visual Graph */
+    .graph-canvas-container {
+      width: 100%;
+      height: 280px;
+      background-color: #0E0E0E;
+      position: relative;
+    }
+
+    #crawl-graph-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Findings Cards */
+    .findings-list {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-height: 520px;
+      overflow-y: auto;
+    }
+
+    .finding-card {
+      background-color: #141414;
+      border: 1px solid #2B2B2B;
+      border-radius: 8px;
+      padding: 16px;
+      transition: border-color 0.15s ease;
+    }
+
+    .finding-card.is-fixed {
+      border-color: #10B981;
+      background-color: rgba(16, 185, 129, 0.04);
+    }
+
+    .severity-border-Critical { border-left: 4px solid #EF4444; }
+    .severity-border-High { border-left: 4px solid #F97316; }
+    .severity-border-Medium { border-left: 4px solid #EAB308; }
+    .severity-border-Low { border-left: 4px solid #3B82F6; }
+
+    .finding-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .badge-severity {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .severity-Critical { background: rgba(239, 68, 68, 0.2); color: #EF4444; }
+    .severity-High { background: rgba(249, 115, 22, 0.2); color: #F97316; }
+    .severity-Medium { background: rgba(234, 179, 8, 0.2); color: #EAB308; }
+    .severity-Low { background: rgba(59, 130, 246, 0.2); color: #3B82F6; }
+
+    .badge-category {
+      font-size: 10px;
+      background: #262626;
+      color: #999;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .badge-fixed {
+      font-size: 10px;
+      background: rgba(16, 185, 129, 0.2);
+      color: #10B981;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .finding-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+
+    .finding-url {
+      font-size: 12px;
+      color: #38BDF8;
+      margin-bottom: 8px;
+      word-break: break-all;
+    }
+
+    .finding-symptom {
+      font-size: 12px;
+      color: #BBB;
+      margin-bottom: 8px;
+    }
+
+    .finding-evidence-box {
+      background: #0A0A0A;
+      border: 1px solid #222;
+      border-radius: 6px;
+      padding: 10px;
+      margin: 8px 0;
+      font-family: monospace;
+      font-size: 11px;
+    }
+
+    .evidence-header {
+      font-size: 9px;
+      color: #777;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .finding-remediation {
+      font-size: 12px;
+      color: #10B981;
+      margin-top: 6px;
+    }
+
+    .btn-action-preview {
+      background-color: #FD6909;
+      color: #FFF;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-action-preview:hover {
+      background-color: #E95700;
+    }
+
+    .manual-fix-tag {
+      font-size: 11px;
+      color: #888;
+      font-style: italic;
+    }
+
+    /* Diff Modal */
+    .diff-modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .diff-modal-overlay.hidden {
+      display: none;
+    }
+
+    .diff-modal-card {
+      background-color: #181818;
+      border: 1px solid #333;
+      border-radius: 12px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .diff-modal-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid #2A2A2A;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .diff-modal-body {
+      padding: 20px 24px;
+      overflow-y: auto;
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    .diff-modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid #2A2A2A;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      background-color: #141414;
+    }
+
+    .diff-line {
+      padding: 2px 6px;
+      line-height: 1.4;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .diff-add { background-color: rgba(16, 185, 129, 0.15); color: #34D399; }
+    .diff-del { background-color: rgba(239, 68, 68, 0.15); color: #F87171; }
+    .diff-chunk { color: #818CF8; font-weight: bold; background: #111; }
+    .diff-context { color: #888; }
+  </style>
+</head>
+<body class="ops-body">
+
+  <!-- Header -->
+  <header class="ops-header">
+    <a href="index.html" class="ops-logo">
+      <span class="ops-logo-dot"></span>
+      <span>SearchForge SEO</span>
+      <span style="font-size: 11px; background: #262626; color: #FD6909; padding: 2px 6px; border-radius: 4px; margin-left: 6px;">OPERATIONS CENTER</span>
+    </a>
+
+    <nav class="ops-nav">
+      <a href="index.html">Home</a>
+      <a href="services/index.html">Services</a>
+      <a href="case-studies/index.html">Case Studies</a>
+      <a href="audit.html">Audit Hub</a>
+      <a href="project-dossier.html">Dossier</a>
+      <a href="operations-center.html" class="active" style="font-weight: 700;">Operations Center</a>
+    </nav>
+  </header>
+
+  <main class="ops-container">
+
+    <!-- Mentor Demonstration Guided Workflow Banner -->
+    <section class="mentor-strip">
+      <div>
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+          <span style="background: #FD6909; color: #fff; font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 3px;">MENTOR WORKFLOW</span>
+          <h2 style="font-size: 15px; font-weight: 700; margin: 0; color: #FFFFFF;">Live Traceable SEO Remediation Pipeline</h2>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+          <span class="mentor-step-pill"><strong>1</strong> Inject Fault</span>
+          <span class="mentor-step-pill"><strong>2</strong> Start Crawl</span>
+          <span class="mentor-step-pill"><strong>3</strong> Stream Events</span>
+          <span class="mentor-step-pill"><strong>4</strong> Inspect Evidence</span>
+          <span class="mentor-step-pill"><strong>5</strong> Review Diff</span>
+          <span class="mentor-step-pill"><strong>6</strong> Apply to Sandbox</span>
+          <span class="mentor-step-pill"><strong>7</strong> Re-Crawl & Verify</span>
+          <span class="mentor-step-pill"><strong>8</strong> Export Proof</span>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+        <button id="btn-mentor-demo" class="btn-mentor-primary" title="Automates Steps 1-3 for SEO-005 (Accidental Noindex)">
+          <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <span>Run Mentor Demo (SEO-005)</span>
+        </button>
+        <button id="btn-reset-sandbox" class="btn-secondary" title="Cleans sandbox fixture back to reference baseline">
+          <span>Reset Sandbox</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Controls & Config Bar -->
+    <section class="controls-bar">
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <div>
+          <label style="font-size: 11px; color: #888; display: block; margin-bottom: 4px;">Target URL (Isolated Sandbox)</label>
+          <input type="text" id="input-target-url" class="input-field" style="width: 280px;" value="http://localhost:3000/sandbox/index.html">
+        </div>
+        <div>
+          <label style="font-size: 11px; color: #888; display: block; margin-bottom: 4px;">Max Pages</label>
+          <input type="number" id="input-max-pages" class="input-field" style="width: 80px;" value="30" min="5" max="60">
+        </div>
+        <div style="align-self: flex-end;">
+          <button id="btn-start-crawl" class="btn-mentor-primary" style="padding: 9px 18px;">
+            <span>Start Live Crawl</span>
+          </button>
+          <button id="btn-cancel-crawl" class="btn-danger" style="padding: 9px 14px; margin-left: 6px;" disabled>
+            <span>Cancel</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Fault Injection Selector -->
+      <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+        <div>
+          <label style="font-size: 11px; color: #888; display: block; margin-bottom: 4px;">Inject Controlled Flaw</label>
+          <select id="select-scenario" class="input-field" style="width: 250px;">
+            <!-- Populated via API -->
+          </select>
+        </div>
+        <div style="align-self: flex-end;">
+          <button id="btn-inject-scenario" class="btn-secondary">Inject Fault</button>
+        </div>
+      </div>
+
+      <!-- Historical Run Switcher & Report Exports -->
+      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+        <div>
+          <label style="font-size: 11px; color: #888; display: block; margin-bottom: 4px;">Audit History (SQLite)</label>
+          <select id="select-past-runs" class="input-field" style="width: 190px;">
+            <option value="">-- No Past Runs --</option>
+          </select>
+        </div>
+        <div style="align-self: flex-end; display: flex; gap: 6px;">
+          <button id="btn-export-report" class="btn-secondary" title="View printable HTML proof report or save as PDF">PDF / Print</button>
+          <button id="btn-export-json" class="btn-secondary" title="Download machine-readable JSON proof">JSON</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Telemetry Metrics Grid -->
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-card-lbl">Live Health Score</div>
+        <div id="metric-score" class="metric-card-val" style="color: #FD6909;">--</div>
+        <div class="metric-card-sub">Measured via live rules</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-card-lbl">Crawled Pages</div>
+        <div id="metric-pages" class="metric-card-val">0</div>
+        <div class="metric-card-sub">Discovered in local sandbox</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-card-lbl">Critical Flaws</div>
+        <div id="metric-critical" class="metric-card-val" style="color: #EF4444;">0</div>
+        <div class="metric-card-sub">Blocking search indexability</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-card-lbl">High Severity Flaws</div>
+        <div id="metric-high" class="metric-card-val" style="color: #F97316;">0</div>
+        <div class="metric-card-sub">Link & metadata defects</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-card-lbl">Crawl Duration</div>
+        <div id="metric-duration" class="metric-card-val" style="font-size: 24px; color: #AAA;">0ms</div>
+        <div class="metric-card-sub">
+          <span id="crawl-status-badge" class="status-pill status-idle">IDLE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Workspace (Visual Graph + Findings vs Live Console) -->
+    <section class="ops-workspace">
+
+      <!-- Left Column: Graph & Findings -->
+      <div>
+        <!-- Visual Crawl Graph -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <div class="panel-title">
+              <svg width="16" height="16" fill="none" stroke="#FD6909" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span>Dynamic Crawl Link Graph (Real-time Discovery)</span>
+            </div>
+            <div style="font-size: 11px; color: #888;">Live Edge Relationships</div>
+          </div>
+          <div class="graph-canvas-container">
+            <canvas id="crawl-graph-canvas"></canvas>
+          </div>
+        </div>
+
+        <!-- Evidence-Backed Findings -->
+        <div class="panel-card">
+          <div class="panel-header">
+            <div class="panel-title">
+              <svg width="16" height="16" fill="none" stroke="#FD6909" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Audit Findings & Evidence Repository</span>
+              <span id="findings-count" style="font-size: 12px; color: #888;">(0)</span>
+            </div>
+            <div style="font-size: 11px; color: #888;">SEO-001 through SEO-015 Engine</div>
+          </div>
+          <div id="findings-container" class="findings-list">
+            <div class="empty-findings" style="text-align: center; padding: 32px 16px; color: #666;">
+              <p>Ready to audit. Click <strong>Start Live Crawl</strong> or <strong>Run Mentor Demo (SEO-005)</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Live Activity Console (SSE Event Stream) -->
+      <div>
+        <div class="panel-card">
+          <div class="panel-header">
+            <div class="panel-title">
+              <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10B981; margin-right: 4px;"></span>
+              <span>Live Activity Console (SSE Telemetry Stream)</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 12px;">
+              <label style="display: flex; align-items: center; gap: 4px; color: #888; cursor: pointer;">
+                <input type="checkbox" id="chk-autoscroll" checked> Auto-scroll
+              </label>
+              <button id="btn-clear-logs" class="btn-secondary" style="padding: 3px 8px; font-size: 11px;">Clear</button>
+            </div>
+          </div>
+          <div id="console-logs" class="console-box">
+            <div class="log-row log-info">
+              <span class="log-time">--:--:--</span>
+              <span class="badge-stage stage-queue">SYS</span>
+              <span class="log-msg">Operations Center initialized. SSE ready. Awaiting crawl initiation.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architectural Blueprint Reference Card -->
+        <div class="panel-card" style="padding: 16px;">
+          <h3 style="font-size: 13px; font-weight: 700; color: #FFFFFF; margin-bottom: 8px;">Safety, Scope & Execution Guarantees</h3>
+          <ul style="font-size: 12px; color: #888; line-height: 1.6; padding-left: 18px;">
+            <li><strong>Strict Sandbox Isolation</strong>: All automated fixes write exclusively to <code>tests/fixtures/sandbox/</code>. Production files remain untouched.</li>
+            <li><strong>Atomic Backups</strong>: Every applied patch creates a timestamped SQLite backup enabling instant one-click rollback.</li>
+            <li><strong>SSRF Protection</strong>: Crawl engine rejects third-party origins and non-allowlisted network targets.</li>
+            <li><strong>Zero Simulated Delays</strong>: Events and telemetry reflect actual Node.js HTTP fetches and Cheerio DOM parse operations.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Diff Review & Confirmation Modal -->
+  <div id="diff-modal" class="diff-modal-overlay hidden">
+    <div class="diff-modal-card">
+      <div class="diff-modal-header">
+        <div>
+          <h3 id="diff-title" style="margin: 0; font-size: 16px; color: #FFF;">Review Proposed Patch</h3>
+          <div id="diff-file" style="font-size: 12px; color: #FD6909; margin-top: 4px;">Target: sandbox/file.html</div>
+        </div>
+        <button id="btn-close-diff-modal" style="background: none; border: none; color: #888; font-size: 20px; cursor: pointer;">&times;</button>
+      </div>
+
+      <div class="diff-modal-body">
+        <div id="diff-container">
+          <!-- Rendered Unified Diff -->
+        </div>
+      </div>
+
+      <div class="diff-modal-footer">
+        <button onclick="document.getElementById('diff-modal').classList.add('hidden')" class="btn-secondary">Cancel</button>
+        <button id="btn-confirm-apply-fix" class="btn-mentor-primary">Confirm & Apply to Sandbox</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Operations Center Client Scripts -->
+  <script src="frontend/js/operations-center.js"></script>
+</body>
+</html>

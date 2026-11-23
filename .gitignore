@@ -1,3 +1,11 @@
+# Dependencies
+node_modules/
+
+# SQLite databases
+*.db
+*.db-wal
+*.db-shm
+
 # OS files
 .DS_Store
 Thumbs.db

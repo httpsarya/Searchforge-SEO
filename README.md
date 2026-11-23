@@ -117,20 +117,88 @@ searchforge-seo-rescue/
 
 ---
 
+## 🛰️ Live SEO Operations Center (November 2026 Upgrade)
+
+The project has been upgraded in full alignment with the **Website Upgrade & Practical Mentor Demonstration Technical Implementation Blueprint (Version 1.0)**. It transitions SearchForge SEO into a live, evidence-driven platform capable of real-time local website crawling, live Server-Sent Events (SSE) telemetry streaming, Cheerio server-side DOM rule verification (SEO-001 through SEO-015), isolated sandbox fault injection, unified diff previews, atomic SQLite backups with one-click rollback, and exportable audit proofs.
+
+### Architecture Overview
+- **Backend Runtime**: Node.js v24 + Express 5
+- **Crawling & Link Graph**: Breadth-first scoped crawler with SSRF boundary protection, redirect chain (301/302) tracking, and real-time directed edge mapping.
+- **Rule Engine**: 15 issue-family Cheerio rule checks with raw observed DOM/header evidence snippets.
+- **Persistence & Telemetry**: Native `node:sqlite` WAL database (`seo_operations.db`) storing audit runs, monotonic event streams, evidence findings, and file patch backups.
+- **Real-Time Stream**: One-way SSE endpoint (`/api/audits/:id/events`) with monotonic event IDs, stage categorization, and auto-replay on reconnect.
+- **Safety & Isolation**: Sandbox manager restricts all automated fault injections and patch fixes strictly to `tests/fixtures/sandbox/`.
+
+---
+
 ## 🚀 How to Run the Website Locally
 
-You have two easy ways to run and explore the project:
-
-### Option 1: Native PowerShell HTTP Server (Recommended)
-Open PowerShell in the project directory:
+### Option 1: Live SEO Operations Center & API (Recommended)
+Make sure you are in the project root:
 ```powershell
 cd C:\Users\hp\.gemini\antigravity\scratch\searchforge-seo-rescue
+npm start
+```
+This boots the Express Operations Center server on `http://localhost:3000/`:
+- **Live Operations Center**: [http://localhost:3000/operations-center.html](http://localhost:3000/operations-center.html)
+- **Isolated Sandbox Mirror**: [http://localhost:3000/sandbox/index.html](http://localhost:3000/sandbox/index.html)
+- **Technical SEO Audit Hub**: [http://localhost:3000/audit.html](http://localhost:3000/audit.html)
+- **Architectural Dossier**: [http://localhost:3000/project-dossier.html](http://localhost:3000/project-dossier.html)
+
+### Running Automated Integration Tests
+To verify server routing, SSRF security, fault injection, crawler detection, fix application, rollback, and reports:
+```powershell
+npm test
+```
+*(Runs native Node.js integration suite `tests/integration/audit.test.js`)*
+
+### Resetting the Isolated Sandbox
+To clean and restore the sandbox directory back to pristine baseline files:
+```powershell
+npm run sandbox:reset
+```
+
+### Option 2: Native PowerShell HTTP Server (Zero-Dependency Fallback)
+```powershell
 powershell -ExecutionPolicy Bypass -File .\server.ps1
 ```
-This automatically starts a local HTTP server on `http://localhost:3000` and opens your default browser!
 
-### Option 2: Open Directly in Any Web Browser
-Simply double-click `index.html` or drag it into Chrome, Edge, Brave, or Firefox. The responsive layout, state switching, and live SEO inspector work seamlessly via `file://`.
+---
+
+## 🎓 Mentor Demonstration Walkthrough (SEO-005)
+
+A mentor or reviewer can execute the complete end-to-end remediation pipeline with zero simulated delays:
+
+1. **Open Operations Center**: Navigate to [http://localhost:3000/operations-center.html](http://localhost:3000/operations-center.html).
+2. **Inject Fault**: Click **"Run Mentor Demo (SEO-005)"** or choose *SEO-005: Accidental Noindex* from the scenario dropdown and click **"Inject Fault"**.
+3. **Start Live Crawl**: The crawler initiates `http://localhost:3000/sandbox/index.html` (or targeted fixture), streaming live HTTP requests, parsing DOM features, and mapping graph edges.
+4. **Watch Live Telemetry**: Inspect real-time SSE events in the **Live Activity Console** (colorized stages: `QUEUE` -> `FETCH` -> `PARSE` -> `RULE`).
+5. **Inspect Observed Evidence**: Locate finding **[SEO-005]** in the Findings Repository. Review the raw observed DOM snippet: `<meta name="robots" content="noindex, follow">`.
+6. **Review Unified Diff**: Click **"Review Proposed Fix"** to view the generated before/after unified patch diff in the modal dialog.
+7. **Apply Patch to Sandbox**: Click **"Confirm & Apply to Sandbox"**. The engine saves an atomic backup to SQLite and patches the isolated sandbox file.
+8. **Re-Crawl & Verify**: Click **"Start Live Crawl"** to recrawl the sandbox. Finding SEO-005 is eliminated, and the measured Health Score climbs.
+9. **Export Proof**: Click **"PDF / Print"** for a printable executive audit dossier, or **"JSON"** for downloadable evidence payload.
+
+---
+
+## 📡 API Contract Reference
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/api/audits` | `POST` | Create a new crawl run (`{ targetUrl, maxPages, maxDepth }`) |
+| `/api/audits` | `GET` | List all historical audits from SQLite |
+| `/api/audits/:id` | `GET` | Retrieve audit run status, summary metrics, and findings |
+| `/api/audits/:id/events` | `GET` | SSE telemetry stream with replay via `Last-Event-ID` |
+| `/api/audits/:id/findings` | `GET` | Fetch evidence-backed findings for run |
+| `/api/audits/:id/graph` | `GET` | Discovered crawl graph nodes and directed edges |
+| `/api/audits/:id/cancel` | `POST` | Abort an active crawler run |
+| `/api/audits/:id/report` | `GET` | Downloadable evidence report (`?format=json` or `?format=html`) |
+| `/api/demo/inject` | `POST` | Inject controlled flaw into sandbox copy (`{ issueId }`) |
+| `/api/demo/reset` | `POST` | Deterministically reset sandbox fixture to clean baseline |
+| `/api/demo/scenarios` | `GET` | List all injectable SEO scenario definitions |
+| `/api/fixes/preview` | `POST` | Generate unified diff patch preview (`{ issueId }`) |
+| `/api/fixes/apply` | `POST` | Apply approved fix with SQLite backup (`{ issueId, runId }`) |
+| `/api/fixes/rollback` | `POST` | Restore previous file state from backup (`{ backupId }`) |
 
 ---
 

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Technical SEO Blog &amp; Engineering Guides | SearchForge SEO</title>
+  <meta name="description" content="In-depth technical SEO guides, crawl budget tutorials, Core Web Vitals optimizations, and schema markup architectures by SearchForge engineers.">
+  <link rel="canonical" href="https://searchforge-seo.com/blog/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="manifest" href="../site.webmanifest">
+  <meta name="theme-color" content="#FD6909">
+
+  <!-- Open Graph Protocol -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://searchforge-seo.com/blog/">
+  <meta property="og:title" content="Technical SEO Blog &amp; Engineering Guides | SearchForge SEO">
+  <meta property="og:description" content="Read our deep engineering articles on search architecture and bot crawlability.">
+  <meta property="og:image" content="https://searchforge-seo.com/assets/images/og-preview.png">
+
+  <!-- Tailwind CSS & Custom Design System -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FD6909',
+              orangeHover: '#E95700',
+              black: '#0D0D0D',
+              charcoal: '#181818',
+              surface: '#242424',
+              surfaceLight: '#3A3A3A',
+              offWhite: '#F5F5F5',
+              text: '#222222',
+              muted: '#999999',
+              border: '#EAEAEA'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://searchforge-seo.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://searchforge-seo.com/blog/"
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-white text-brand-text flex flex-col min-h-screen">
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="site-container">
+      <div class="flex items-center justify-between h-20">
+        <a href="../index.html" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-10 h-10 rounded-md bg-[#181818] border border-brand-orange/40 flex items-center justify-center transition-all group-hover:border-brand-orange">
+            <svg class="w-5 h-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-white font-extrabold text-lg tracking-tight leading-none">SEARCH<span class="text-brand-orange">FORGE</span></span>
+            <span class="text-[10px] text-neutral-400 font-mono tracking-widest uppercase">KNOWLEDGE BASE</span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8" aria-label="Primary Navigation">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../about.html" class="nav-link">About</a>
+          <a href="../services/index.html" class="nav-link">Services</a>
+          <a href="../case-studies/index.html" class="nav-link">Case Studies</a>
+          <a href="index.html" class="nav-link active">Blog &amp; Guides</a>
+          <a href="../faq.html" class="nav-link">FAQ</a>
+          <a href="../contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="../audit.html" class="btn-primary text-xs uppercase tracking-wider py-3 px-5">Audit Hub</a>
+        </div>
+
+        <button id="mobile-menu-toggle" class="lg:hidden text-neutral-300 hover:text-white p-2" aria-expanded="false" aria-controls="mobile-nav-menu" aria-label="Toggle navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobile-nav-menu" class="hidden lg:hidden border-t border-neutral-800 py-4 space-y-3 bg-[#0D0D0D]">
+        <a href="../index.html" class="block text-neutral-300 hover:text-white py-1.5">Home</a>
+        <a href="../about.html" class="block text-neutral-300 hover:text-white py-1.5">About</a>
+        <a href="../services/index.html" class="block text-neutral-300 hover:text-white py-1.5">Services</a>
+        <a href="../case-studies/index.html" class="block text-neutral-300 hover:text-white py-1.5">Case Studies</a>
+        <a href="index.html" class="block text-brand-orange font-semibold py-1.5">Blog &amp; Guides</a>
+        <a href="../faq.html" class="block text-neutral-300 hover:text-white py-1.5">FAQ</a>
+        <a href="../contact.html" class="block text-neutral-300 hover:text-white py-1.5">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1">
+
+    <section class="hero-pattern py-20 text-white border-b border-brand-surfaceLight">
+      <div class="site-container">
+        <nav class="flex items-center gap-2 text-xs font-mono text-neutral-400 mb-6" aria-label="Breadcrumbs">
+          <a href="../index.html" class="hover:text-brand-orange">Home</a>
+          <span>/</span>
+          <span class="text-white">Blog</span>
+        </nav>
+
+        <div class="max-w-3xl space-y-6">
+          <span class="badge badge-orange">ENGINEERING INSIGHTS</span>
+          <h1 class="hero-heading text-white">
+            Technical SEO Guides &amp; Research
+          </h1>
+          <p class="text-neutral-300 text-lg leading-relaxed">
+            Written by engineers for engineers. Deep dives into crawl budget optimization, server-side rendering, schema markup, and Core Web Vitals telemetry.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- F18. Search and Filter Bar -->
+    <section class="py-8 bg-brand-offWhite border-b border-neutral-200">
+      <div class="site-container">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <!-- Search input -->
+          <div class="w-full md:w-80 relative">
+            <input type="text" id="blog-search-input" placeholder="Search guides by keyword..." class="w-full h-11 pl-10 pr-4 bg-white border border-neutral-300 rounded-md text-xs focus:outline-none focus:border-brand-orange">
+            <svg class="w-4 h-4 text-neutral-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+
+          <!-- Category filter buttons -->
+          <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+            <button class="blog-filter-btn active text-xs font-semibold px-4 py-2 rounded-md bg-[#FD6909] text-white" data-category="all">All Articles</button>
+            <button class="blog-filter-btn text-xs font-semibold px-4 py-2 rounded-md bg-white border border-neutral-300 text-neutral-700 hover:border-brand-orange" data-category="checklist">Checklists</button>
+            <button class="blog-filter-btn text-xs font-semibold px-4 py-2 rounded-md bg-white border border-neutral-300 text-neutral-700 hover:border-brand-orange" data-category="crawlability">Crawlability</button>
+            <button class="blog-filter-btn text-xs font-semibold px-4 py-2 rounded-md bg-white border border-neutral-300 text-neutral-700 hover:border-brand-orange" data-category="cwv">Core Web Vitals</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-20 bg-white">
+      <div class="site-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-posts-grid">
+          
+          <!-- Post 1: Checklist -->
+          <article class="agency-card flex flex-col justify-between blog-post-card" data-category="checklist">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="badge badge-orange">Checklist</span>
+                <span class="text-xs text-neutral-400 font-mono">12 min read</span>
+              </div>
+              <h2 class="card-heading text-brand-black mb-3 blog-card-title">
+                <a href="technical-seo-checklist.html" class="hover:text-brand-orange transition">
+                  The 45-Point Technical SEO Audit Checklist for 2026
+                </a>
+              </h2>
+              <p class="text-neutral-600 text-xs sm:text-sm leading-relaxed mb-6 blog-card-excerpt">
+                A rigorous, full-stack architectural checklist covering protocol status codes, canonical structures, rendering hydration, and robots syntax verification.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-neutral-100 flex items-center justify-between">
+              <span class="text-xs text-neutral-400">By Arya Tiwari (CSE Student)</span>
+              <a href="technical-seo-checklist.html" class="text-xs font-semibold text-brand-orange hover:underline flex items-center gap-1">
+                <span>Read Article</span> &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- Post 2: Crawlability Guide -->
+          <article class="agency-card flex flex-col justify-between blog-post-card" data-category="crawlability">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="badge badge-fixed">Architecture</span>
+                <span class="text-xs text-neutral-400 font-mono">16 min read</span>
+              </div>
+              <h2 class="card-heading text-brand-black mb-3 blog-card-title">
+                <a href="crawlability-guide.html" class="hover:text-brand-orange transition">
+                  Crawl Budget, Bot Traps &amp; Large-Scale Architecture Optimization
+                </a>
+              </h2>
+              <p class="text-neutral-600 text-xs sm:text-sm leading-relaxed mb-6 blog-card-excerpt">
+                How Googlebot prioritizes crawling on multi-million URL domains. Learn to eliminate faceted traps, optimize sitemap frequency, and deconstruct server access logs.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-neutral-100 flex items-center justify-between">
+              <span class="text-xs text-neutral-400">By Arya Tiwari (CSE Student)</span>
+              <a href="crawlability-guide.html" class="text-xs font-semibold text-brand-orange hover:underline flex items-center gap-1">
+                <span>Read Article</span> &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- Post 3: Core Web Vitals Guide -->
+          <article class="agency-card flex flex-col justify-between blog-post-card" data-category="cwv">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="badge badge-warning">Performance</span>
+                <span class="text-xs text-neutral-400 font-mono">14 min read</span>
+              </div>
+              <h2 class="card-heading text-brand-black mb-3 blog-card-title">
+                <a href="core-web-vitals-guide.html" class="hover:text-brand-orange transition">
+                  Conquering INP, LCP, and CLS in Modern JavaScript Stacks
+                </a>
+              </h2>
+              <p class="text-neutral-600 text-xs sm:text-sm leading-relaxed mb-6 blog-card-excerpt">
+                Practical engineering guide to achieving sub-200ms INP and sub-2.5s LCP in Next.js, React, and headless eCommerce platforms without breaking animations.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-neutral-100 flex items-center justify-between">
+              <span class="text-xs text-neutral-400">By Arya Tiwari (CSE Student)</span>
+              <a href="core-web-vitals-guide.html" class="text-xs font-semibold text-brand-orange hover:underline flex items-center gap-1">
+                <span>Read Article</span> &rarr;
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <div id="blog-no-results" class="hidden text-center py-16">
+          <p class="text-neutral-500 text-base">No matching guides found. Try searching for "Crawl", "LCP", or "Schema".</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Multi-Column Dark Agency Footer -->
+  <footer class="bg-brand-black text-white border-t border-neutral-800 py-16">
+    <div class="site-container">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-neutral-800/80">
+        <div class="lg:col-span-2 space-y-4">
+          <a href="../index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded bg-[#181818] border border-brand-orange/40 flex items-center justify-center">
+              <svg class="w-4 h-4 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <span class="text-white font-extrabold text-base tracking-tight">SEARCH<span class="text-brand-orange">FORGE</span></span>
+          </a>
+          <p class="text-neutral-400 text-xs leading-relaxed max-w-sm">
+            SearchForge SEO is an elite technical SEO agency and learning laboratory. We build, break, diagnose, and remediate complex search architecture.
+          </p>
+          <div class="pt-2 text-xs text-neutral-400 space-y-1">
+            <div class="text-white font-medium">Project Owner: Arya Tiwari <span class="text-brand-orange font-mono text-[11px]">(CSE Student)</span></div>
+            <div>Bennett University &middot; Greater Noida, India</div>
+            <div class="font-mono text-[11px] text-neutral-400">
+              <a href="tel:+919999606103" class="hover:text-brand-orange">+91 9999606103</a> &middot; <a href="mailto:arya2tiwari@gmail.com" class="hover:text-brand-orange">arya2tiwari@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Core Practices</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="../services/technical-seo.html" class="hover:text-brand-orange">Technical SEO</a></li>
+            <li><a href="../services/on-page-seo.html" class="hover:text-brand-orange">On-Page Architecture</a></li>
+            <li><a href="../services/local-seo.html" class="hover:text-brand-orange">Local SEO &amp; Entities</a></li>
+            <li><a href="../services/seo-audits.html" class="hover:text-brand-orange">Forensic Audits</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Documentation</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="../audit.html" class="hover:text-brand-orange">SEO Audit Hub</a></li>
+            <li><a href="technical-seo-checklist.html" class="hover:text-brand-orange">45-Point Audit Checklist</a></li>
+            <li><a href="crawlability-guide.html" class="hover:text-brand-orange">Crawlability Deep Dive</a></li>
+            <li><a href="core-web-vitals-guide.html" class="hover:text-brand-orange">Core Web Vitals Guide</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-4">Company</h4>
+          <ul class="space-y-2.5 text-xs text-neutral-400">
+            <li><a href="../about.html" class="hover:text-brand-orange">About Us</a></li>
+            <li><a href="../case-studies/retail-growth.html" class="hover:text-brand-orange">Retail Case Study</a></li>
+            <li><a href="../faq.html" class="hover:text-brand-orange">Frequently Asked Questions</a></li>
+            <li><a href="../contact.html" class="hover:text-brand-orange">Contact Team</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-neutral-400 gap-4">
+        <div>
+          &copy; 2026 SearchForge SEO &middot; Designed &amp; Developed by <span class="text-white font-semibold">Arya Tiwari</span> (CSE Student, Bennett University, Greater Noida)
+        </div>
+        <div class="flex items-center gap-3 font-mono text-xs">
+          <a href="https://httpsarya.github.io/Arya_Tiwari_portfolio_12/" target="_blank" rel="noopener" class="text-brand-orange hover:underline">Portfolio</a>
+          <span class="text-neutral-600">&middot;</span>
+          <a href="https://github.com/httpsarya" target="_blank" rel="noopener" class="text-brand-orange hover:underline">GitHub</a>
+          <span class="text-neutral-600">&middot;</span>
+          <a href="https://linkedin.com/in/arya-tiwari-01ba84292/" target="_blank" rel="noopener" class="text-brand-orange hover:underline">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/audit-data.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

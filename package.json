@@ -1,0 +1,29 @@
+{
+  "name": "searchforge-seo-rescue",
+  "version": "1.0.0",
+  "description": "> **\"Technical SEO. Rebuilt from the foundation up.\"**",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "node --test tests/integration/audit.test.js",
+    "sandbox:reset": "node -e \"require('./backend/fixes/sandbox-manager.js').reset(); console.log('Sandbox reset complete.');\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/httpsarya/Searchforge-SEO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/httpsarya/Searchforge-SEO/issues"
+  },
+  "homepage": "https://github.com/httpsarya/Searchforge-SEO#readme",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "cors": "^2.8.6",
+    "diff": "^9.0.0",
+    "express": "^5.3.0"
+  }
+}

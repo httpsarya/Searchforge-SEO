@@ -120,6 +120,10 @@
           </svg>
           <span>Inspect SEO</span>
         </button>
+        <a href="${getRelativePrefix()}operations-center.html" class="text-xs font-semibold text-white px-2.5 py-1.5 rounded bg-emerald-600 hover:bg-emerald-500 transition flex items-center gap-1.5" title="Open Live SEO Operations Center">
+          <span class="inline-block w-2 h-2 rounded-full bg-white animate-pulse"></span>
+          <span>Ops Center</span>
+        </a>
         <a href="${getRelativePrefix()}audit.html" class="text-xs font-semibold text-white px-2.5 py-1.5 rounded bg-[#FD6909] hover:bg-[#E95700] transition flex items-center gap-1.5" title="Open Full Technical SEO Rescue Audit Dashboard">
           <span>Audit Hub</span>
           <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
