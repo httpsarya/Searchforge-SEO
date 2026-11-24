@@ -122,49 +122,48 @@
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
   <!-- 1. Header / Navbar -->
-  <header class="site-header">
-    <div class="site-container">
-      <div class="flex items-center justify-between h-20">
+  <header class="site-header sticky top-0 z-50 bg-[#0D0D0D]/95 backdrop-blur-md border-b border-[#222222]">
+    <div class="site-container max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[76px]">
         <!-- Brand Logo -->
-        <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
-          <div class="w-10 h-10 rounded-md bg-[#181818] border border-brand-orange/40 flex items-center justify-center transition-all group-hover:border-brand-orange">
-            <svg class="w-5 h-5 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none flex-shrink-0">
+          <div class="w-9 h-9 rounded-lg bg-[#161616] border border-[#FF6B00] flex items-center justify-center transition-all shadow-[0_0_12px_rgba(255,107,0,0.25)] group-hover:scale-105">
+            <svg class="w-4 h-4 text-[#FF6B00]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
           <div class="flex flex-col">
-            <span class="text-white font-extrabold text-lg tracking-tight leading-none">SEARCH<span class="text-brand-orange">FORGE</span></span>
-            <span class="text-[10px] text-neutral-400 font-mono tracking-widest uppercase">TECHNICAL SEO</span>
+            <span class="text-white font-extrabold text-[17px] tracking-tight leading-tight">SEARCH<span class="text-[#FF6B00]">FORGE</span></span>
+            <span class="text-[9px] text-[#FF6B00] font-mono tracking-[0.2em] uppercase font-semibold leading-none">TECHNICAL SEO</span>
           </div>
         </a>
 
-        <!-- Desktop Navigation Links -->
-        <nav class="hidden lg:flex items-center gap-8" aria-label="Primary Navigation">
-          <a href="index.html" class="nav-link active">Home</a>
-          <a href="about.html" class="nav-link">About</a>
-          <a href="services/index.html" class="nav-link">Services</a>
-          <a href="case-studies/index.html" class="nav-link">Case Studies</a>
-          <a href="blog/index.html" class="nav-link">Blog &amp; Guides</a>
-          <a href="faq.html" class="nav-link">FAQ</a>
-          <a href="contact.html" class="nav-link">Contact</a>
+        <!-- Desktop Navigation Links (Centered, Single-Row) -->
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-8" aria-label="Primary Navigation">
+          <a href="index.html" class="text-white text-sm font-semibold relative py-1 border-b-2 border-[#FF6B00] transition-colors">Home</a>
+          <a href="about.html" class="text-neutral-300 hover:text-white text-sm font-medium transition-colors">About</a>
+          <a href="services/index.html" class="text-neutral-300 hover:text-white text-sm font-medium transition-colors">Services</a>
+          <a href="case-studies/index.html" class="text-neutral-300 hover:text-white text-sm font-medium transition-colors">Case Studies</a>
+          <a href="blog/index.html" class="text-neutral-300 hover:text-white text-sm font-medium transition-colors">Blog &amp; Guides</a>
+          <a href="faq.html" class="text-neutral-300 hover:text-white text-sm font-medium transition-colors">FAQ</a>
+          <a href="contact.html" class="text-neutral-300 hover:text-white text-sm font-medium transition-colors">Contact</a>
         </nav>
 
-        <!-- Right Header Actions -->
-        <div class="hidden sm:flex items-center gap-3">
-          <a href="operations-center.html" class="btn-primary text-xs uppercase tracking-wider py-3 px-4 flex items-center gap-1.5" style="background-color: #10B981; border-color: #10B981;" title="Open Live SEO Operations Center">
-            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-            <span>Live Ops Center</span>
-          </a>
-          <a href="SearchForge_Technical_SEO_Rescue_Dossier.pdf" download class="btn-secondary text-xs uppercase tracking-wider py-3 px-4 flex items-center gap-1.5" title="Download Full Technical Architecture PDF Dossier">
-            <svg class="w-3.5 h-3.5 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        <!-- Right Header Actions (PDF Dossier + Audit Hub only, NO Live Ops Center) -->
+        <div class="hidden sm:flex items-center gap-3 flex-shrink-0">
+          <a href="SearchForge_Technical_SEO_Rescue_Dossier.pdf" download class="bg-[#181818] hover:bg-[#222222] border border-[#333333] hover:border-neutral-500 text-white rounded-lg px-3.5 py-2 flex items-center gap-2 transition" title="Download Full Technical Architecture PDF Dossier">
+            <svg class="w-4 h-4 text-[#FF6B00]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
             </svg>
-            <span>PDF Dossier</span>
+            <div class="flex flex-col text-left leading-none">
+              <span class="text-[10px] font-bold tracking-wider text-neutral-300 uppercase">PDF</span>
+              <span class="text-[11px] font-extrabold tracking-wider text-white uppercase mt-0.5">DOSSIER</span>
+            </div>
           </a>
-          <a href="audit.html" class="btn-primary text-xs uppercase tracking-wider py-3 px-5">
-            <span>Audit Hub</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          <a href="audit.html" class="bg-[#FF6B00] hover:bg-[#E95700] text-white font-extrabold text-xs tracking-wider uppercase px-4 py-2.5 rounded-lg flex items-center gap-1.5 transition shadow-lg shadow-[#FF6B00]/25">
+            <span>AUDIT HUB</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
             </svg>
           </a>
         </div>
@@ -179,15 +178,16 @@
 
       <!-- Mobile Dropdown Navigation -->
       <div id="mobile-nav-menu" class="hidden lg:hidden border-t border-neutral-800 py-4 space-y-3 bg-[#0D0D0D]">
-        <a href="index.html" class="block text-brand-orange font-semibold py-1.5">Home</a>
+        <a href="index.html" class="block text-[#FF6B00] font-semibold py-1.5">Home</a>
         <a href="about.html" class="block text-neutral-300 hover:text-white py-1.5">About</a>
         <a href="services/index.html" class="block text-neutral-300 hover:text-white py-1.5">Services</a>
         <a href="case-studies/index.html" class="block text-neutral-300 hover:text-white py-1.5">Case Studies</a>
         <a href="blog/index.html" class="block text-neutral-300 hover:text-white py-1.5">Blog &amp; Guides</a>
         <a href="faq.html" class="block text-neutral-300 hover:text-white py-1.5">FAQ</a>
         <a href="contact.html" class="block text-neutral-300 hover:text-white py-1.5">Contact</a>
-        <div class="pt-2">
-          <a href="audit.html" class="btn-primary w-full text-center">Launch Audit Hub</a>
+        <div class="pt-2 flex flex-col gap-2">
+          <a href="audit.html" class="bg-[#FF6B00] text-white text-center py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider">Launch Audit Hub</a>
+          <a href="operations-center.html" class="bg-[#10B981] text-white text-center py-2.5 rounded-lg font-bold text-xs uppercase tracking-wider">Live Ops Center</a>
         </div>
       </div>
     </div>
@@ -196,132 +196,254 @@
   <!-- Main Content Landmark -->
   <main id="main-content" class="flex-1">
 
-    <!-- 2. DARK HERO SECTION -->
-    <section class="hero-pattern py-20 lg:py-28 border-b border-brand-surfaceLight text-white relative overflow-hidden">
-      <div class="site-container relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <!-- 2. DARK HERO SECTION + LIVE OPS CENTER + FEATURE STRIP -->
+    <section class="hero-pattern pt-12 pb-16 lg:pt-16 lg:pb-20 border-b border-[#222222] text-white relative overflow-hidden">
+      <div class="site-container max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Two-Column Hero Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center mb-14 lg:mb-16">
           
-          <!-- Hero Left Column -->
+          <!-- Hero Left Column (Approx 48-52%) -->
           <div class="lg:col-span-7 space-y-6">
             <div class="flex flex-wrap items-center gap-2">
-              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-orange/10 border border-brand-orange/30">
-                <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
-                <span class="text-xs font-semibold uppercase tracking-wider text-brand-orange">TECHNICAL SEO RESCUE PROJECT</span>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF6B00]/10 border border-[#FF6B00]/30 text-[#FF6B00] text-xs font-semibold tracking-wider uppercase font-mono">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#FF6B00]"></span>
+                <span>TECHNICAL SEO RESCUE PROJECT</span>
               </div>
-              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-300 text-xs font-mono">
-                <span class="text-brand-orange font-semibold">Project Lead:</span> Arya Tiwari (CSE Student &middot; Bennett University)
+              <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#161616] border border-[#2E2E2E] text-neutral-300 text-xs">
+                <span class="text-[#FF6B00] font-semibold">Project Lead:</span> Arya Tiwari (CSE Student &middot; Bennett University)
               </div>
             </div>
             
-            <h1 class="hero-heading text-white">
-              Your Website <br class="hidden sm:inline" />
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-neutral-400">Is Broken.</span>
-              <span class="block text-brand-orange mt-1">Let's find out why.</span>
+            <h1 class="text-4xl sm:text-5xl lg:text-[60px] xl:text-[64px] font-extrabold tracking-tight leading-[1.06] text-white">
+              Your Website<br>
+              Is Broken.<br>
+              <span class="text-[#FF6B00]">Let's find out why.</span>
             </h1>
 
-            <p class="text-neutral-300 text-lg max-w-xl leading-relaxed">
+            <p class="text-neutral-400 text-base max-w-lg leading-relaxed font-normal">
               We engineer controlled technical SEO simulations. From catastrophic crawl blocks and canonical conflicts to subtle Core Web Vitals throttling, we diagnose, repair, and validate organic search architecture.
             </p>
 
-            <div class="flex flex-wrap items-center gap-4 pt-2">
-              <a href="audit.html" class="btn-primary text-sm">
+            <div class="flex flex-wrap items-center gap-4 pt-1">
+              <a href="audit.html" class="bg-[#FF6B00] hover:bg-[#E95700] text-white font-bold text-sm px-6 py-3.5 rounded-lg flex items-center gap-2 shadow-lg shadow-[#FF6B00]/25 transition">
                 <span>Start The Audit</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </a>
-              <a href="#whats-broken" class="btn-secondary text-sm">
+              <a href="#whats-broken" class="bg-[#161616] hover:bg-[#202020] border border-[#333333] hover:border-neutral-500 text-white font-medium text-sm px-6 py-3.5 rounded-lg transition">
                 <span>Explore Deliberate Flaws</span>
               </a>
             </div>
-
-            <!-- Trust Badges -->
-            <div class="pt-6 border-t border-neutral-800 grid grid-cols-3 gap-6">
-              <div>
-                <div class="text-2xl font-bold text-white tracking-tight">15+</div>
-                <div class="text-xs text-neutral-400 uppercase tracking-wider mt-0.5">Engineered Flaws</div>
-              </div>
-              <div>
-                <div class="text-2xl font-bold text-brand-orange tracking-tight">100%</div>
-                <div class="text-xs text-neutral-400 uppercase tracking-wider mt-0.5">Verifiable Fixes</div>
-              </div>
-              <div>
-                <div class="text-2xl font-bold text-emerald-400 tracking-tight">0 ms</div>
-                <div class="text-xs text-neutral-400 uppercase tracking-wider mt-0.5">Crawl Latency</div>
-              </div>
-            </div>
           </div>
 
-          <!-- Hero Right Column: Interactive Audit Scorecard Mockup -->
+          <!-- Hero Right Column: Diagnostic Benchmark Scorecard -->
           <div class="lg:col-span-5">
-            <div class="bg-[#181818] border border-neutral-700/80 rounded-xl p-6 sm:p-8 shadow-2xl relative">
+            <div class="bg-[#151515] border border-[#FF6B00]/45 rounded-2xl p-6 sm:p-7 shadow-[0_0_30px_rgba(255,107,0,0.08)] relative">
               <!-- Header Bar of Mockup -->
-              <div class="flex items-center justify-between pb-6 border-b border-neutral-800">
+              <div class="flex items-start justify-between pb-5 border-b border-[#262626]">
                 <div>
-                  <span class="text-xs text-neutral-400 uppercase font-mono tracking-wider">DIAGNOSTIC BENCHMARK</span>
-                  <div class="text-lg font-bold text-white mt-0.5">TECHNICAL SEO SCORE</div>
+                  <span class="text-[10px] text-neutral-400 font-mono tracking-widest uppercase font-semibold">DIAGNOSTIC BENCHMARK</span>
+                  <div class="text-lg font-bold text-white tracking-tight mt-1">TECHNICAL SEO SCORE</div>
                 </div>
                 <div class="text-right">
-                  <div class="text-3xl font-extrabold text-brand-orange font-mono dynamic-seo-score">98</div>
-                  <div class="text-[11px] text-neutral-400">/ 100 PTS</div>
+                  <div class="text-4xl sm:text-5xl font-black text-[#FF6B00] font-mono leading-none dynamic-seo-score">98</div>
+                  <div class="text-[10px] text-neutral-400 font-mono tracking-wider font-semibold mt-1">/ 100 PTS</div>
                 </div>
               </div>
 
               <!-- Metric Progress Bars -->
-              <div class="py-6 space-y-4">
+              <div class="py-5 space-y-4">
                 <div>
-                  <div class="flex justify-between text-xs font-medium mb-1.5">
+                  <div class="flex justify-between text-xs font-semibold mb-1.5">
                     <span class="text-neutral-300">INDEXING HEALTH</span>
-                    <span class="text-emerald-400 font-mono">100% CANONICAL</span>
+                    <span id="metric-lbl-indexing" class="text-emerald-400 font-mono text-[11px]">100% CANONICAL</span>
                   </div>
-                  <div class="w-full bg-neutral-800 h-2.5 rounded-full overflow-hidden">
-                    <div class="bg-gradient-to-r from-brand-orange to-emerald-500 h-full w-[100%] rounded-full"></div>
+                  <div class="w-full bg-[#222222] h-2 rounded-full overflow-hidden">
+                    <div id="metric-bar-indexing" class="bg-gradient-to-r from-[#FF6B00] via-yellow-400 to-[#10B981] h-full w-full rounded-full transition-all duration-500"></div>
                   </div>
                 </div>
 
                 <div>
-                  <div class="flex justify-between text-xs font-medium mb-1.5">
+                  <div class="flex justify-between text-xs font-semibold mb-1.5">
                     <span class="text-neutral-300">PERFORMANCE &amp; CWV</span>
-                    <span class="text-emerald-400 font-mono">LCP 1.4s · INP 45ms</span>
+                    <span id="metric-lbl-cwv" class="text-emerald-400 font-mono text-[11px]">LCP 1.4s &middot; INP 45ms</span>
                   </div>
-                  <div class="w-full bg-neutral-800 h-2.5 rounded-full overflow-hidden">
-                    <div class="bg-emerald-500 h-full w-[96%] rounded-full"></div>
+                  <div class="w-full bg-[#222222] h-2 rounded-full overflow-hidden">
+                    <div id="metric-bar-cwv" class="bg-[#10B981] h-full w-[96%] rounded-full transition-all duration-500"></div>
                   </div>
                 </div>
 
                 <div>
-                  <div class="flex justify-between text-xs font-medium mb-1.5">
+                  <div class="flex justify-between text-xs font-semibold mb-1.5">
                     <span class="text-neutral-300">CRAWL ACCESSIBILITY</span>
-                    <span class="text-brand-orange font-mono">0 BOT TRAPS</span>
+                    <span id="metric-lbl-crawl" class="text-[#FF6B00] font-mono text-[11px]">0 BOT TRAPS</span>
                   </div>
-                  <div class="w-full bg-neutral-800 h-2.5 rounded-full overflow-hidden">
-                    <div class="bg-brand-orange h-full w-[100%] rounded-full"></div>
+                  <div class="w-full bg-[#222222] h-2 rounded-full overflow-hidden">
+                    <div id="metric-bar-crawl" class="bg-[#FF6B00] h-full w-full rounded-full transition-all duration-500"></div>
                   </div>
                 </div>
 
                 <div>
-                  <div class="flex justify-between text-xs font-medium mb-1.5">
+                  <div class="flex justify-between text-xs font-semibold mb-1.5">
                     <span class="text-neutral-300">SCHEMA ENTITY VALIDATION</span>
-                    <span class="text-emerald-400 font-mono">0 ERRORS</span>
+                    <span id="metric-lbl-schema" class="text-emerald-400 font-mono text-[11px]">0 ERRORS</span>
                   </div>
-                  <div class="w-full bg-neutral-800 h-2.5 rounded-full overflow-hidden">
-                    <div class="bg-emerald-500 h-full w-[100%] rounded-full"></div>
+                  <div class="w-full bg-[#222222] h-2 rounded-full overflow-hidden">
+                    <div id="metric-bar-schema" class="bg-[#10B981] h-full w-full rounded-full transition-all duration-500"></div>
                   </div>
                 </div>
               </div>
 
               <!-- Status Notification Chip inside Mockup -->
-              <div class="p-3.5 bg-neutral-900 rounded-lg border border-neutral-800 flex items-center justify-between text-xs">
+              <div class="p-3.5 bg-[#1B1B1B] rounded-xl border border-[#2B2B2B] flex items-center justify-between text-xs">
                 <div class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                  <span class="text-neutral-300">Active Audit Mode:</span>
+                  <svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="text-neutral-300 font-medium">Active Audit Mode</span>
                 </div>
-                <span class="dynamic-seo-grade text-emerald-400 font-semibold">Excellent (All Rescued)</span>
+                <span class="dynamic-seo-grade text-emerald-400 font-bold">Excellent (All Repaired)</span>
               </div>
             </div>
           </div>
 
         </div>
+
+        <!-- 3. DEDICATED LIVE OPS CENTER PANEL (MAIN PRIORITY) -->
+        <div id="inpage-live-ops" data-inpage-hud="true" class="live-ops-panel pt-0 pb-7 px-4 sm:px-8 mb-10">
+          
+          <!-- Background oscilloscope / telemetry waves -->
+          <svg class="absolute bottom-0 left-0 w-48 sm:w-64 h-16 pointer-events-none opacity-40 text-emerald-500 overflow-hidden" viewBox="0 0 200 40" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M0 20 Q25 0 50 20 T100 20 T150 20 T200 20" />
+            <path d="M0 25 Q30 5 60 25 T120 25 T180 25" opacity="0.5" />
+          </svg>
+          <svg class="absolute bottom-0 right-0 w-48 sm:w-64 h-16 pointer-events-none opacity-40 text-emerald-500 overflow-hidden scale-x-[-1]" viewBox="0 0 200 40" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M0 20 Q25 0 50 20 T100 20 T150 20 T200 20" />
+            <path d="M0 25 Q30 5 60 25 T120 25 T180 25" opacity="0.5" />
+          </svg>
+
+          <!-- Top Center Green Pill Heading -->
+          <div class="flex justify-center -mt-3.5 sm:-mt-4 relative z-10">
+            <div class="inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 border border-emerald-400 text-white font-extrabold text-xs tracking-wider uppercase shadow-[0_0_20px_rgba(16,185,129,0.35)]">
+              <span class="inline-flex items-center gap-1 font-mono">
+                <span class="text-xs">((</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                <span class="text-xs">))</span>
+              </span>
+              <span>LIVE OPS CENTER</span>
+            </div>
+          </div>
+
+          <!-- Subheading -->
+          <p class="text-[11px] font-mono tracking-[0.2em] uppercase font-semibold text-neutral-400 text-center mt-3 mb-5 relative z-10">
+            REAL-TIME TECHNICAL SEO MONITORING &amp; DIAGNOSTICS
+          </p>
+
+          <!-- Centered Control Toolbar -->
+          <div class="flex justify-center relative z-10">
+            <div class="inline-flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 bg-[#1A1A1A] border border-[#2E2E2E] rounded-full p-2 px-3 sm:px-4 shadow-xl">
+              <!-- Live Indicator & SCENARIO label -->
+              <div class="flex items-center gap-2 pl-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-white">SCENARIO:</span>
+              </div>
+
+              <!-- Scenario Toggle -->
+              <div class="bg-[#121212] p-1 rounded-full flex items-center border border-[#2A2A2A]" role="group" aria-label="Toggle SEO Scenario">
+                <button id="hud-opt-flawed" type="button" class="hud-toggle-option px-4 py-1.5 rounded-full text-xs font-semibold text-neutral-400 hover:text-white transition" title="View Website with Intentional SEO Flaws">
+                  Flawed
+                </button>
+                <button id="hud-opt-rescued" type="button" class="hud-toggle-option px-4 py-1.5 rounded-full text-xs font-bold bg-[#10B981] text-white transition active-rescued shadow-sm" title="View Website with Fully Rescued SEO">
+                  Rescued
+                </button>
+              </div>
+
+              <!-- Divider -->
+              <div class="h-5 w-px bg-[#333333] hidden sm:block"></div>
+
+              <!-- Inspect SEO Button -->
+              <button id="btn-open-inspector" type="button" class="px-3.5 sm:px-4 py-1.5 rounded-full bg-[#242424] hover:bg-[#2C2C2C] border border-[#383838] text-white text-xs font-semibold flex items-center gap-2 transition" title="Inspect Current Page Technical SEO">
+                <svg class="w-3.5 h-3.5 text-[#FF6B00]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <span>Inspect SEO</span>
+              </button>
+
+              <!-- Ops Center Button -->
+              <a href="operations-center.html" class="px-3.5 sm:px-4 py-1.5 rounded-full bg-[#10B981] hover:bg-emerald-600 text-white text-xs font-bold flex items-center gap-1.5 transition shadow-sm" title="Launch Real-time SEO Operations Center">
+                <span class="w-2 h-2 rounded-full bg-white"></span>
+                <span>Ops Center</span>
+              </a>
+
+              <!-- Audit Hub Button -->
+              <a href="audit.html" class="px-3.5 sm:px-4 py-1.5 rounded-full bg-[#FF6B00] hover:bg-[#E95700] text-white text-xs font-bold flex items-center gap-1 transition shadow-sm" title="Open Full Technical SEO Rescue Audit Dashboard">
+                <span>Audit Hub</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. FEATURE STRIP (BELOW LIVE OPS CENTER) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 pb-2 border-t border-neutral-800/80">
+          <!-- 1. Simulate Real Issues -->
+          <div class="flex items-center gap-3.5 px-2 lg:border-r border-neutral-800/80">
+            <div class="w-9 h-9 rounded-lg bg-[#FF6B00]/10 flex items-center justify-center flex-shrink-0 text-[#FF6B00]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm tracking-tight leading-snug">Simulate Real Issues</div>
+              <div class="text-neutral-400 text-xs mt-0.5">Pre-built technical SEO faults</div>
+            </div>
+          </div>
+
+          <!-- 2. Apply Fixes -->
+          <div class="flex items-center gap-3.5 px-2 lg:border-r border-neutral-800/80">
+            <div class="w-9 h-9 rounded-lg bg-[#FF6B00]/10 flex items-center justify-center flex-shrink-0 text-[#FF6B00]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm tracking-tight leading-snug">Apply Fixes</div>
+              <div class="text-neutral-400 text-xs mt-0.5">Industry-standard resolutions</div>
+            </div>
+          </div>
+
+          <!-- 3. Validate Results -->
+          <div class="flex items-center gap-3.5 px-2 lg:border-r border-neutral-800/80">
+            <div class="w-9 h-9 rounded-lg bg-[#FF6B00]/10 flex items-center justify-center flex-shrink-0 text-[#FF6B00]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm tracking-tight leading-snug">Validate Results</div>
+              <div class="text-neutral-400 text-xs mt-0.5">Live metrics &amp; proof</div>
+            </div>
+          </div>
+
+          <!-- 4. Learn & Replicate -->
+          <div class="flex items-center gap-3.5 px-2">
+            <div class="w-9 h-9 rounded-lg bg-[#FF6B00]/10 flex items-center justify-center flex-shrink-0 text-[#FF6B00]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm tracking-tight leading-snug">Learn &amp; Replicate</div>
+              <div class="text-neutral-400 text-xs mt-0.5">A practical SEO learning lab</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

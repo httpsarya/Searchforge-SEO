@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 :root {
-  --primary: #FD6909;
+  --primary: #FF6B00;
   --primary-hover: #E95700;
-  --primary-light: rgba(253, 105, 9, 0.1);
-  --primary-border: rgba(253, 105, 9, 0.25);
-  --black: #0D0D0D;
-  --dark: #181818;
-  --dark-surface: #242424;
-  --dark-surface-elevated: #2f2f2f;
-  --dark-border: #3A3A3A;
+  --primary-light: rgba(255, 107, 0, 0.1);
+  --primary-border: rgba(255, 107, 0, 0.35);
+  --black: #0B0B0B;
+  --dark: #121212;
+  --dark-surface: #181818;
+  --dark-surface-elevated: #242424;
+  --dark-border: #2D2D2D;
   --white: #FFFFFF;
   --off-white: #F5F5F5;
   --text: #222222;
   --text-light: #555555;
-  --muted: #999999;
+  --muted: #A1A1AA;
   --border: #EAEAEA;
-  --border-dark: #2a2a2a;
+  --border-dark: #262626;
   
   /* Status Colors */
   --status-healthy: #10B981;
@@ -28,16 +28,16 @@
   --status-fixed: #059669;
   --status-fixed-bg: rgba(5, 150, 105, 0.15);
   
-  --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --container-max: 1200px;
+  --font-primary: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --container-max: 1240px;
   --radius-sm: 4px;
   --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
+  --radius-lg: 10px;
+  --radius-xl: 16px;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-glow: 0 0 25px rgba(253, 105, 9, 0.2);
+  --shadow-glow: 0 0 30px rgba(255, 107, 0, 0.2);
 }
 
 /* Base Reset & Typography */
@@ -257,13 +257,33 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero Background Geometric & Glow */
 .hero-pattern {
-  background-color: var(--dark);
+  background-color: #0D0D0D;
   background-image: 
-    radial-gradient(circle at 80% 20%, rgba(253, 105, 9, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 15% 75%, rgba(253, 105, 9, 0.06) 0%, transparent 35%),
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    radial-gradient(circle at 80% 15%, rgba(255, 107, 0, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 10% 70%, rgba(255, 107, 0, 0.08) 0%, transparent 40%),
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+}
+
+/* In-Page Live Ops Center Panel */
+.live-ops-panel {
+  background-color: #141414;
+  border: 1px solid rgba(255, 107, 0, 0.45);
+  box-shadow: 0 0 35px rgba(255, 107, 0, 0.12), inset 0 0 20px rgba(255, 107, 0, 0.02);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.live-ops-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.7), transparent);
 }
 
 /* Grayscale Photography with orange overlay */

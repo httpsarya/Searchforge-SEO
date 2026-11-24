@@ -30,16 +30,20 @@
     localStorage.setItem(STATE_KEY, mode);
     document.documentElement.setAttribute('data-seo-mode', mode);
 
-    // Update HUD toggle buttons
+    // Update HUD toggle buttons (both in-page and floating if any)
     const optFlawed = document.getElementById('hud-opt-flawed');
     const optRescued = document.getElementById('hud-opt-rescued');
     if (optFlawed && optRescued) {
       if (mode === 'flawed') {
-        optFlawed.classList.add('active-flawed');
-        optRescued.classList.remove('active-rescued');
+        optFlawed.classList.add('active-flawed', 'bg-red-500', 'text-white');
+        optFlawed.classList.remove('text-neutral-400');
+        optRescued.classList.remove('active-rescued', 'bg-[#10B981]', 'text-white');
+        optRescued.classList.add('text-neutral-400');
       } else {
-        optRescued.classList.add('active-rescued');
-        optFlawed.classList.remove('active-flawed');
+        optRescued.classList.add('active-rescued', 'bg-[#10B981]', 'text-white');
+        optRescued.classList.remove('text-neutral-400');
+        optFlawed.classList.remove('active-flawed', 'bg-red-500', 'text-white');
+        optFlawed.classList.add('text-neutral-400');
       }
     }
 
@@ -70,11 +74,65 @@
 
     const scoreGradeDisplays = document.querySelectorAll('.dynamic-seo-grade');
     scoreGradeDisplays.forEach(el => {
-      el.textContent = mode === 'flawed' ? 'Poor (8 Critical Errors)' : 'Excellent (All Rescued)';
+      el.textContent = mode === 'flawed' ? 'Poor (8 Critical Errors)' : 'Excellent (All Repaired)';
       el.className = mode === 'flawed' 
-        ? 'dynamic-seo-grade text-red-500 font-semibold' 
-        : 'dynamic-seo-grade text-emerald-500 font-semibold';
+        ? 'dynamic-seo-grade text-red-500 font-bold' 
+        : 'dynamic-seo-grade text-emerald-400 font-bold';
     });
+
+    // Update Hero Scorecard Metric Bars dynamically if present
+    const barIndexing = document.getElementById('metric-bar-indexing');
+    const lblIndexing = document.getElementById('metric-lbl-indexing');
+    const barCWV = document.getElementById('metric-bar-cwv');
+    const lblCWV = document.getElementById('metric-lbl-cwv');
+    const barCrawl = document.getElementById('metric-bar-crawl');
+    const lblCrawl = document.getElementById('metric-lbl-crawl');
+    const barSchema = document.getElementById('metric-bar-schema');
+    const lblSchema = document.getElementById('metric-lbl-schema');
+
+    if (barIndexing && lblIndexing) {
+      if (mode === 'flawed') {
+        barIndexing.className = 'bg-red-500 h-full w-[42%] rounded-full transition-all duration-500';
+        lblIndexing.textContent = '42% CONFLICTS';
+        lblIndexing.className = 'text-red-400 font-mono text-[11px]';
+
+        if (barCWV && lblCWV) {
+          barCWV.className = 'bg-red-500 h-full w-[35%] rounded-full transition-all duration-500';
+          lblCWV.textContent = 'LCP 4.8s · INP 380ms';
+          lblCWV.className = 'text-red-400 font-mono text-[11px]';
+        }
+        if (barCrawl && lblCrawl) {
+          barCrawl.className = 'bg-red-500 h-full w-[25%] rounded-full transition-all duration-500';
+          lblCrawl.textContent = '8 BOT TRAPS';
+          lblCrawl.className = 'text-red-400 font-mono text-[11px]';
+        }
+        if (barSchema && lblSchema) {
+          barSchema.className = 'bg-red-500 h-full w-[40%] rounded-full transition-all duration-500';
+          lblSchema.textContent = '3 ERRORS';
+          lblSchema.className = 'text-red-400 font-mono text-[11px]';
+        }
+      } else {
+        barIndexing.className = 'bg-gradient-to-r from-[#FF6B00] via-yellow-400 to-[#10B981] h-full w-full rounded-full transition-all duration-500';
+        lblIndexing.textContent = '100% CANONICAL';
+        lblIndexing.className = 'text-emerald-400 font-mono text-[11px]';
+
+        if (barCWV && lblCWV) {
+          barCWV.className = 'bg-[#10B981] h-full w-[96%] rounded-full transition-all duration-500';
+          lblCWV.textContent = 'LCP 1.4s · INP 45ms';
+          lblCWV.className = 'text-emerald-400 font-mono text-[11px]';
+        }
+        if (barCrawl && lblCrawl) {
+          barCrawl.className = 'bg-[#FF6B00] h-full w-full rounded-full transition-all duration-500';
+          lblCrawl.textContent = '0 BOT TRAPS';
+          lblCrawl.className = 'text-[#FF6B00] font-mono text-[11px]';
+        }
+        if (barSchema && lblSchema) {
+          barSchema.className = 'bg-[#10B981] h-full w-full rounded-full transition-all duration-500';
+          lblSchema.textContent = '0 ERRORS';
+          lblSchema.className = 'text-emerald-400 font-mono text-[11px]';
+        }
+      }
+    }
 
     // Update Live SEO Inspector Content if drawer is open or exists
     updateInspectorMetrics();
@@ -89,6 +147,17 @@
 
   // --- FLOATING RESCUE CONTROLLER (HUD) ---
   function renderFloatingHUD() {
+    // If page has in-page live ops HUD (index.html), do not render floating HUD
+    if (document.getElementById('inpage-live-ops') || document.querySelector('[data-inpage-hud="true"]')) {
+      const optFlawed = document.getElementById('hud-opt-flawed');
+      const optRescued = document.getElementById('hud-opt-rescued');
+      const btnInspector = document.getElementById('btn-open-inspector');
+      if (optFlawed) optFlawed.addEventListener('click', () => applyRescueMode('flawed'));
+      if (optRescued) optRescued.addEventListener('click', () => applyRescueMode('rescued'));
+      if (btnInspector) btnInspector.addEventListener('click', toggleInspectorDrawer);
+      return;
+    }
+
     if (document.getElementById('seo-floating-hud')) return;
 
     const hud = document.createElement('div');
